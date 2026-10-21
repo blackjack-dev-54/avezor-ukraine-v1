@@ -76,8 +76,13 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 
 /* ---------- Hero: four Ukrainian cities, slowly changing ---------- */
 .hero { position: relative; height: 100svh; min-height: 820px; color: #fff; overflow: hidden; background: #2a3440; }
-.hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.6s ease; transform: scale(1.04); }
-.hero__media img.is-on { opacity: 1; animation: drift 14s linear both; }
+/* isolation keeps the img z-index below the scrims */
+.hero__media { isolation: isolate; }
+.hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.04); }
+.hero__media img.is-on { z-index: 2; opacity: 1; animation: drift 14s linear both; }
+/* The outgoing photo keeps its drift and stays opaque under the incoming one:
+   dropping the animation snapped its scale, fading both at once flashed the background. */
+.hero__media img.is-out { z-index: 1; opacity: 1; animation: drift 14s linear both; }
 @keyframes drift { from { transform: scale(1.04); } to { transform: scale(1.11); } }
 .hero__scrim { position: absolute; inset: 0 30% 0 0; /* taste-skill-ignore: neutral scrim under text */ background: linear-gradient(90deg, rgba(10,12,14,.66), rgba(10,12,14,0)); pointer-events: none; }
 .hero__scrim--top { inset: 0 0 auto 0; height: 170px; /* taste-skill-ignore: neutral scrim under text */ background: linear-gradient(180deg, rgba(10,12,14,.45), rgba(10,12,14,0)); }
@@ -103,7 +108,8 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 .cta:hover { background: var(--accent-press); transform: translateY(-2px); }
 .cta:hover .cta__ic { transform: rotate(-45deg); }
 .cta:active { transform: scale(.98); }
-.hero__place { position: absolute; z-index: 2; right: var(--m); bottom: var(--m); padding: 8px 16px; border-radius: var(--pill); background: rgba(20,22,24,.5); font-size: var(--t-s); font-weight: 500; }
+.hero__place { position: absolute; z-index: 2; right: var(--m); bottom: var(--m); padding: 8px 16px; border-radius: var(--pill); background: rgba(20,22,24,.5); font-size: var(--t-s); font-weight: 500; transition: opacity .5s ease; }
+.hero__place.is-swap { opacity: 0; }
 
 /* The lead form wears the v3 search pill. */
 .lead-form { margin-top: 40px; display: flex; align-items: stretch; background: #fff; color: var(--ink); border-radius: var(--pill); padding: 8px; width: min(100%, 940px); }
@@ -952,10 +958,14 @@ const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!still) {
   setInterval(() => {
     if (document.hidden) return;
-    heroImgs[hIdx].classList.remove('is-on');
+    const out = heroImgs[hIdx];
+    out.classList.replace('is-on', 'is-out');
     hIdx = (hIdx + 1) % heroImgs.length;
     heroImgs[hIdx].classList.add('is-on');
-    setPlace(hIdx);
+    placeEl.classList.add('is-swap');
+    setTimeout(() => { setPlace(hIdx); placeEl.classList.remove('is-swap'); }, 500);
+    // Release it only once the new photo fully covers it (matches the 2s fade).
+    setTimeout(() => out.classList.remove('is-out'), 2100);
   }, 6500);
 }
 
