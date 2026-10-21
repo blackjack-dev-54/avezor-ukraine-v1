@@ -1,0 +1,2716 @@
+{
+ "url": ".taste-skill/home-ukraine-mockup/index.html",
+ "at": "2026-10-21T19:37:53.142Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    1,
+    0.71,
+    0.63,
+    0.73,
+    0.79,
+    0.73,
+    0.71,
+    0.93
+   ],
+   "motion": {
+    "elements": 40,
+    "css": 13,
+    "transitions": 27,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 7091,
+     "screens": 7.9,
+     "words": 494,
+     "img": 19,
+     "video": 0,
+     "canvas": 0,
+     "svg": 21,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 15,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "commons-94366364.jpg",
+      "2017.jpg",
+      "rynok-square-in-lviv-8673813675.jpg",
+      "podil-at-night-49530393651.jpg",
+      "BU46150427-0.jpg",
+      "BU50959470-0.jpg",
+      "BU35600005-0.jpg",
+      "BU14824633-0.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Безпечна купівля та продаж нерухомості",
+     "words": 5,
+     "chars": 38,
+     "lines": 2,
+     "size": 95,
+     "vw": 6.6,
+     "font": "Onest",
+     "weight": 500,
+     "tracking": -0.045,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.72,
+     "top": 380,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Безпечна купівля та продаж нерухомості",
+     "words": 5,
+     "lines": 2,
+     "size": 95,
+     "font": "Onest"
+    },
+    "headings": [
+     {
+      "text": "Безпечна купівля та продаж нерухомості",
+      "words": 5,
+      "chars": 38,
+      "lines": 2,
+      "size": 95,
+      "vw": 6.6,
+      "font": "Onest",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.72,
+      "top": 380,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Чому вибирають Avezor",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.54,
+      "top": 1113,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "100%",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 86.4,
+      "vw": 6,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 1244,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "12 453",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 86.4,
+      "vw": 6,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.24,
+      "top": 1244,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "24 год",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 86.4,
+      "vw": 6,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.24,
+      "top": 1244,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Вигідні умови",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.26,
+      "top": 1547,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Наші ключові послуги",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 2212,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "«Ми беремо відповідальність за юридичну чистоту кожної угоди, захищаючи ваші інтереси на кожному етапі.»",
+      "words": 14,
+      "chars": 104,
+      "lines": 3,
+      "size": 33.1,
+      "vw": 2.3,
+      "font": "Onest",
+      "weight": 700,
+      "tracking": -0.015,
+      "leading": 1.22,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.54,
+      "top": 3147,
+      "tag": "blockquote",
+      "kind": "statement"
+     },
+     {
+      "text": "Avezor у цифрах",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 3210,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "10+",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 86.4,
+      "vw": 6,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.22,
+      "top": 3348,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "5 000+",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 86.4,
+      "vw": 6,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.22,
+      "top": 3348,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "98%",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 86.4,
+      "vw": 6,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.22,
+      "top": 3348,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "4 простих кроки до угоди",
+      "words": 5,
+      "chars": 24,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.55,
+      "top": 4028,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Часті запитання",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 5177,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Готові зробити перший крок?",
+      "words": 4,
+      "chars": 27,
+      "lines": 1,
+      "size": 56.2,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.61,
+      "top": 5933,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 15,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Onest",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      16,
+      18,
+      20,
+      25,
+      33,
+      56,
+      86,
+      95
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "Onest",
+      "size": 18,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 17.2
+     },
+     "measureChars": 61,
+     "max": {
+      "size": 95,
+      "vw": 6.6,
+      "font": "Onest",
+      "text": "Безпечна купівля та продаж нерухомості"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#2a3440",
+       "top": 0,
+       "hsl": {
+        "h": 213,
+        "s": 0.21,
+        "l": 0.21
+       }
+      },
+      {
+       "color": "#cf1409",
+       "top": 1212,
+       "hsl": {
+        "h": 3,
+        "s": 0.92,
+        "l": 0.42
+       }
+      },
+      {
+       "color": "#f4f4f2",
+       "top": 1515,
+       "hsl": {
+        "h": 60,
+        "s": 0.08,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#fdecea",
+       "top": 3308,
+       "hsl": {
+        "h": 6,
+        "s": 0.83,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#1b1b1b",
+       "top": 3908,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#fdf3f1",
+       "top": 5807,
+       "hsl": {
+        "h": 10,
+        "s": 0.75,
+        "l": 0.97
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1b1b1b",
+       "share": 0.49
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.21
+      },
+      {
+       "color": "#e6e6e6",
+       "share": 0.11
+      },
+      {
+       "color": "#5a5a5a",
+       "share": 0.08
+      },
+      {
+       "color": "#c4c4c4",
+       "share": 0.07
+      }
+     ],
+     "button": {
+      "bg": "#cf1409",
+      "hsl": {
+       "h": 3,
+       "s": 0.92,
+       "l": 0.42
+      },
+      "fg": "#1b1b1b"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 10,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Консультація",
+      "Переглянути 12 453 об’єкти"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 3,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 22,
+     "boxRadius": 24,
+     "squareMedia": 4,
+     "roundedMedia": 11,
+     "mediaRadius": 24,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 0,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "onest"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 7091,
+    "margins": {
+     "left": 32,
+     "right": 56
+    },
+    "sections": [
+     {
+      "sel": "header#top.hero",
+      "tag": "header",
+      "top": 0,
+      "height": 900,
+      "words": 34,
+      "media": 0,
+      "middle": 157,
+      "heading": {
+       "text": "Безпечна купівля та продаж нерухомості",
+       "size": 95,
+       "tag": "h1"
+      },
+      "left": 32,
+      "right": 48,
+      "textLeft": 32,
+      "textRight": 48,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.why.wrap",
+      "tag": "section",
+      "top": 900,
+      "height": 1152,
+      "words": 105,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "100%",
+       "size": 86,
+       "tag": "div"
+      },
+      "left": 32,
+      "right": 64,
+      "textLeft": 32,
+      "textRight": 75,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#services.svc.wrap",
+      "tag": "section",
+      "top": 2052,
+      "height": 934,
+      "words": 97,
+      "media": 3,
+      "middle": 16,
+      "heading": {
+       "text": "Наші ключові послуги",
+       "size": 56,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 84,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#numbers.nums.wrap",
+      "tag": "section",
+      "top": 2987,
+      "height": 761,
+      "words": 41,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "10+",
+       "size": 86,
+       "tag": "div"
+      },
+      "left": 32,
+      "right": 34,
+      "textLeft": 32,
+      "textRight": 34,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.how",
+      "tag": "section",
+      "top": 3908,
+      "height": 1109,
+      "words": 52,
+      "media": 5,
+      "middle": 24,
+      "heading": {
+       "text": "4 простих кроки до угоди",
+       "size": 56,
+       "tag": "h2"
+      },
+      "left": 56,
+      "right": 56,
+      "textLeft": 56,
+      "textRight": 78,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#ask.faq.wrap",
+      "tag": "section",
+      "top": 5017,
+      "height": 631,
+      "words": 99,
+      "media": 0,
+      "middle": 198,
+      "heading": {
+       "text": "Часті запитання",
+       "size": 56,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 83,
+      "textLeft": 32,
+      "textRight": 83,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#lead.close",
+      "tag": "section",
+      "top": 5807,
+      "height": 585,
+      "words": 38,
+      "media": 2,
+      "middle": 145,
+      "heading": {
+       "text": "Готові зробити перший крок?",
+       "size": 56,
+       "tag": "h2"
+      },
+      "left": 56,
+      "right": 56,
+      "textLeft": 56,
+      "textRight": 536,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 6408,
+      "height": 667,
+      "words": 93,
+      "media": 1,
+      "middle": 64,
+      "heading": {
+       "text": "Купити",
+       "size": 25,
+       "tag": "a"
+      },
+      "left": 16,
+      "right": 66,
+      "textLeft": 660,
+      "textRight": 66,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Безпечна купівля та продаж нерухомості",
+      "size": 95,
+      "top": 380,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 7
+     },
+     {
+      "x": 56,
+      "n": 5
+     },
+     {
+      "x": 597,
+      "n": 3
+     },
+     {
+      "x": 643,
+      "n": 3
+     },
+     {
+      "x": 1026,
+      "n": 2
+     },
+     {
+      "x": 633,
+      "n": 1
+     },
+     {
+      "x": 855,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 22,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    1,
+    0.76,
+    0.88,
+    0.63,
+    0.59,
+    0.86,
+    0.8,
+    0.94,
+    0.78,
+    0.84,
+    0.94,
+    0.94
+   ],
+   "motion": {
+    "elements": 43,
+    "css": 13,
+    "transitions": 30,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 11438,
+     "screens": 11.2,
+     "words": 483,
+     "img": 19,
+     "video": 0,
+     "canvas": 0,
+     "svg": 21,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 15,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "commons-94366364.jpg",
+      "2017.jpg",
+      "rynok-square-in-lviv-8673813675.jpg",
+      "podil-at-night-49530393651.jpg",
+      "BU46150427-0.jpg",
+      "BU50959470-0.jpg",
+      "BU35600005-0.jpg",
+      "BU14824633-0.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Безпечна купівля та продаж нерухомості",
+     "words": 5,
+     "chars": 38,
+     "lines": 2,
+     "size": 56,
+     "vw": 7.3,
+     "font": "Onest",
+     "weight": 500,
+     "tracking": -0.04,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.8,
+     "top": 665,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Безпечна купівля та продаж нерухомості",
+     "words": 5,
+     "lines": 2,
+     "size": 56,
+     "font": "Onest"
+    },
+    "headings": [
+     {
+      "text": "Безпечна купівля та продаж нерухомості",
+      "words": 5,
+      "chars": 38,
+      "lines": 2,
+      "size": 56,
+      "vw": 7.3,
+      "font": "Onest",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.8,
+      "top": 665,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Чому вибирають Avezor",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 1120,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "100%",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 64,
+      "vw": 8.3,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 1298,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "12 453",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 64,
+      "vw": 8.3,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 2055,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "24 год",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 64,
+      "vw": 8.3,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 2281,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Вигідні умови",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 2481,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Наші ключові послуги",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 3223,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Avezor у цифрах",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 4997,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "10+",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 64,
+      "vw": 8.3,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 5176,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "5 000+",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 64,
+      "vw": 8.3,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 5355,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "98%",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 64,
+      "vw": 8.3,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 5487,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "4 простих кроки до угоди",
+      "words": 5,
+      "chars": 24,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.55,
+      "top": 6529,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Часті запитання",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 8966,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Готові зробити перший крок?",
+      "words": 4,
+      "chars": 27,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 9629,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 14,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Onest",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      16,
+      17,
+      20,
+      22,
+      30,
+      56,
+      64
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Onest",
+      "size": 17,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 17.2
+     },
+     "measureChars": 82,
+     "max": {
+      "size": 64,
+      "vw": 8.3,
+      "font": "Onest",
+      "text": "100%"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#2a3440",
+       "top": 0,
+       "hsl": {
+        "h": 213,
+        "s": 0.21,
+        "l": 0.21
+       }
+      },
+      {
+       "color": "#cf1409",
+       "top": 1274,
+       "hsl": {
+        "h": 3,
+        "s": 0.92,
+        "l": 0.42
+       }
+      },
+      {
+       "color": "#f4f4f2",
+       "top": 2457,
+       "hsl": {
+        "h": 60,
+        "s": 0.08,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#1b1b1b",
+       "top": 4466,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#fdecea",
+       "top": 5152,
+       "hsl": {
+        "h": 6,
+        "s": 0.83,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#2b2b2b",
+       "top": 6597,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.17
+       }
+      },
+      {
+       "color": "#fdf3f1",
+       "top": 9581,
+       "hsl": {
+        "h": 10,
+        "s": 0.75,
+        "l": 0.97
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1b1b1b",
+       "share": 0.5
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.19
+      },
+      {
+       "color": "#e6e6e6",
+       "share": 0.11
+      },
+      {
+       "color": "#5a5a5a",
+       "share": 0.09
+      },
+      {
+       "color": "#c4c4c4",
+       "share": 0.07
+      }
+     ],
+     "button": {
+      "bg": "#cf1409",
+      "hsl": {
+       "h": 3,
+       "s": 0.92,
+       "l": 0.42
+      },
+      "fg": "#1b1b1b"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 13,
+     "inHero": 5,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Переглянути 12 453 об’єкти"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 2,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 19,
+     "boxRadius": 20,
+     "squareMedia": 4,
+     "roundedMedia": 11,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 960,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "onest"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 11438,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "header#top.hero",
+      "tag": "header",
+      "top": 0,
+      "height": 1024,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 220,
+      "textLeft": 20,
+      "textRight": 220,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.why__head",
+      "tag": "div",
+      "top": 1120,
+      "height": 126,
+      "words": 32,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 93,
+      "textLeft": 20,
+      "textRight": 93,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.bento",
+      "tag": "div",
+      "top": 1274,
+      "height": 1853,
+      "words": 70,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "100%",
+       "size": 64,
+       "tag": "div"
+      },
+      "left": 44,
+      "right": 44,
+      "textLeft": 44,
+      "textRight": 54,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.grid",
+      "tag": "div",
+      "top": 3223,
+      "height": 127,
+      "words": 3,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 44,
+      "right": 515,
+      "textLeft": 44,
+      "textRight": 515,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.svc__grid",
+      "tag": "div",
+      "top": 3350,
+      "height": 1550,
+      "words": 91,
+      "media": 3,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 20,
+      "textLeft": 44,
+      "textRight": 74,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#numbers.nums.wrap",
+      "tag": "section",
+      "top": 4901,
+      "height": 1461,
+      "words": 41,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "10+",
+       "size": 64,
+       "tag": "div"
+      },
+      "left": 20,
+      "right": 44,
+      "textLeft": 20,
+      "textRight": 192,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "svg",
+      "tag": "svg",
+      "top": 6457,
+      "height": 2413,
+      "words": 0,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.grid",
+      "tag": "div",
+      "top": 6529,
+      "height": 2269,
+      "words": 47,
+      "media": 4,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 28,
+      "textLeft": 28,
+      "textRight": 103,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#ask.faq.wrap",
+      "tag": "section",
+      "top": 8870,
+      "height": 615,
+      "words": 99,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Часті запитання",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 29,
+      "textLeft": 20,
+      "textRight": 29,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#lead.close",
+      "tag": "section",
+      "top": 9581,
+      "height": 1050,
+      "words": 38,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Готові зробити перший крок?",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 28,
+      "textLeft": 28,
+      "textRight": 62,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 10639,
+      "height": 799,
+      "words": 93,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 25,
+      "textLeft": 20,
+      "textRight": 25,
+      "fullBleed": true,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Безпечна купівля та продаж нерухомості",
+      "size": 56,
+      "top": 665,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 12
+     },
+     {
+      "x": 38,
+      "n": 10
+     }
+    ],
+    "leftBlocks": 22,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    1,
+    0.74,
+    0.84,
+    0.54,
+    0.79,
+    0.7,
+    0.83,
+    0.96,
+    0.73,
+    0.85,
+    0.83,
+    0.96
+   ],
+   "motion": {
+    "elements": 43,
+    "css": 13,
+    "transitions": 30,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 10222,
+     "screens": 12.1,
+     "words": 483,
+     "img": 19,
+     "video": 0,
+     "canvas": 0,
+     "svg": 21,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 15,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "commons-94366364.jpg",
+      "2017.jpg",
+      "rynok-square-in-lviv-8673813675.jpg",
+      "podil-at-night-49530393651.jpg",
+      "BU46150427-0.jpg",
+      "BU50959470-0.jpg",
+      "BU35600005-0.jpg",
+      "BU14824633-0.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Безпечна купівля та продаж нерухомості",
+     "words": 5,
+     "chars": 38,
+     "lines": 2,
+     "size": 37.4,
+     "vw": 9.6,
+     "font": "Onest",
+     "weight": 500,
+     "tracking": -0.04,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 494,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Безпечна купівля та продаж нерухомості",
+     "words": 5,
+     "lines": 2,
+     "size": 37.4,
+     "font": "Onest"
+    },
+    "headings": [
+     {
+      "text": "Безпечна купівля та продаж нерухомості",
+      "words": 5,
+      "chars": 38,
+      "lines": 2,
+      "size": 37.4,
+      "vw": 9.6,
+      "font": "Onest",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 494,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Чому вибирають Avezor",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 940,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "100%",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 1197,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "12 453",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 1723,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "24 год",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 2002,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Вигідні умови",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 2254,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Наші ключові послуги",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 2740,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Avezor у цифрах",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 4599,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "«Ми беремо відповідальність за юридичну чистоту кожної угоди, захищаючи ваші інтереси на кожному етапі.»",
+      "words": 14,
+      "chars": 104,
+      "lines": 4,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Onest",
+      "weight": 700,
+      "tracking": -0.015,
+      "leading": 1.22,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 4646,
+      "tag": "blockquote",
+      "kind": "statement"
+     },
+     {
+      "text": "10+",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 4805,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "5 000+",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 4984,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "98%",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 5116,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "4 простих кроки до угоди",
+      "words": 5,
+      "chars": 24,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 5772,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Часті запитання",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 7427,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Готові зробити перший крок?",
+      "words": 4,
+      "chars": 27,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Onest",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 8308,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 15,
+     "maxLines": 4,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Onest",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      16,
+      17,
+      20,
+      22,
+      30,
+      37,
+      64
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Onest",
+      "size": 17,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 17.2
+     },
+     "measureChars": 41,
+     "max": {
+      "size": 64,
+      "vw": 16.4,
+      "font": "Onest",
+      "text": "100%"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#2a3440",
+       "top": 0,
+       "hsl": {
+        "h": 213,
+        "s": 0.21,
+        "l": 0.21
+       }
+      },
+      {
+       "color": "#cf1409",
+       "top": 1173,
+       "hsl": {
+        "h": 3,
+        "s": 0.92,
+        "l": 0.42
+       }
+      },
+      {
+       "color": "#f4f4f2",
+       "top": 2230,
+       "hsl": {
+        "h": 60,
+        "s": 0.08,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#1b1b1b",
+       "top": 3983,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#fdecea",
+       "top": 4781,
+       "hsl": {
+        "h": 6,
+        "s": 0.83,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#fdf3f1",
+       "top": 8260,
+       "hsl": {
+        "h": 10,
+        "s": 0.75,
+        "l": 0.97
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1b1b1b",
+       "share": 0.5
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.19
+      },
+      {
+       "color": "#e6e6e6",
+       "share": 0.11
+      },
+      {
+       "color": "#5a5a5a",
+       "share": 0.09
+      },
+      {
+       "color": "#c4c4c4",
+       "share": 0.07
+      }
+     ],
+     "button": {
+      "bg": "#cf1409",
+      "hsl": {
+       "h": 3,
+       "s": 0.92,
+       "l": 0.42
+      },
+      "fg": "#1b1b1b"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 12,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Переглянути 12 453 об’єкти"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 2,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 20,
+     "boxRadius": 20,
+     "squareMedia": 4,
+     "roundedMedia": 11,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 1173
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 780,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "onest"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 10222,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "header#top.hero",
+      "tag": "header",
+      "top": 0,
+      "height": 844,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Безпечна купівля та продаж нерухомості",
+       "size": 37,
+       "tag": "h1"
+      },
+      "left": 20,
+      "right": 23,
+      "textLeft": 20,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.why__head",
+      "tag": "div",
+      "top": 940,
+      "height": 205,
+      "words": 32,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 44,
+      "textLeft": 20,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.bento",
+      "tag": "div",
+      "top": 1173,
+      "height": 1470,
+      "words": 70,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "100%",
+       "size": 64,
+       "tag": "div"
+      },
+      "left": 44,
+      "right": 44,
+      "textLeft": 44,
+      "textRight": 52,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.grid",
+      "tag": "div",
+      "top": 2740,
+      "height": 127,
+      "words": 3,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 44,
+      "right": 137,
+      "textLeft": 44,
+      "textRight": 137,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.svc__grid",
+      "tag": "div",
+      "top": 2867,
+      "height": 1636,
+      "words": 91,
+      "media": 3,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 20,
+      "textLeft": 44,
+      "textRight": 74,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#numbers.nums.wrap",
+      "tag": "section",
+      "top": 4503,
+      "height": 1101,
+      "words": 41,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "10+",
+       "size": 64,
+       "tag": "div"
+      },
+      "left": 20,
+      "right": 23,
+      "textLeft": 20,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "svg",
+      "tag": "svg",
+      "top": 5700,
+      "height": 1630,
+      "words": 0,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 8,
+      "right": 8,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.grid",
+      "tag": "div",
+      "top": 5772,
+      "height": 1486,
+      "words": 47,
+      "media": 4,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 28,
+      "textLeft": 28,
+      "textRight": 52,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#ask.faq.wrap",
+      "tag": "section",
+      "top": 7331,
+      "height": 833,
+      "words": 99,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Часті запитання",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 40,
+      "textLeft": 20,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#lead.close",
+      "tag": "section",
+      "top": 8260,
+      "height": 960,
+      "words": 38,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Готові зробити перший крок?",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 8,
+      "right": 8,
+      "textLeft": 28,
+      "textRight": 33,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 9228,
+      "height": 994,
+      "words": 93,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 26,
+      "textLeft": 20,
+      "textRight": 26,
+      "fullBleed": true,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Безпечна купівля та продаж нерухомості",
+      "size": 37,
+      "top": 494,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 12
+     },
+     {
+      "x": 38,
+      "n": 10
+     }
+    ],
+    "leftBlocks": 22,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "off-centre",
+   "width": 1440,
+   "message": "The margins differ: 32px on the left, 56px on the right, at 1440px.",
+   "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "W:\\work\\avezor-ui\\.taste-skill\\home-ukraine-mockup\\inspect\\desktop-fold.jpg",
+   "pages": [
+    "W:\\work\\avezor-ui\\.taste-skill\\home-ukraine-mockup\\inspect\\desktop-page-01.jpg",
+    "W:\\work\\avezor-ui\\.taste-skill\\home-ukraine-mockup\\inspect\\desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "W:\\work\\avezor-ui\\.taste-skill\\home-ukraine-mockup\\inspect\\tablet-fold.jpg",
+   "pages": [
+    "W:\\work\\avezor-ui\\.taste-skill\\home-ukraine-mockup\\inspect\\tablet-page-01.jpg",
+    "W:\\work\\avezor-ui\\.taste-skill\\home-ukraine-mockup\\inspect\\tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "W:\\work\\avezor-ui\\.taste-skill\\home-ukraine-mockup\\inspect\\mobile-fold.jpg",
+   "pages": [
+    "W:\\work\\avezor-ui\\.taste-skill\\home-ukraine-mockup\\inspect\\mobile-page-01.jpg",
+    "W:\\work\\avezor-ui\\.taste-skill\\home-ukraine-mockup\\inspect\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

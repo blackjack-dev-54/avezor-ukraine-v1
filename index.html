@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avezor — Агентство нерухомості та юридичний супровід в Україні | Купівля, продаж, оренда</title>
+<meta name="description" content="Агентство нерухомості Avezor: підбір, перевірка та юридичний супровід угод з нерухомістю. Купівля, продаж та оренда квартир, будинків і комерційних об’єктів без ризиків. Залиште заявку на безкоштовну консультацію!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --surface: #f4f4f2;
+  --blush: #fdecea;
+  --deep: #1b1b1b;
+  --ink: #1b1b1b;
+  --muted: #5a5a5a;
+  --accent: #cf1409;
+  --accent-press: #b31108;
+  --on-red-soft: rgba(255,255,255,.16);
+
+  --display: "Onest", system-ui, sans-serif;
+  --text: "Onest", system-ui, sans-serif;
+
+  --t-xl: clamp(56px, 6vw, 100px);
+  --t-l: clamp(38px, 3.9vw, 60px);
+  --t-m: 25px;
+  --t-b: 18px;
+  --t-s: 14px;
+
+  --r-l: 36px;
+  --r-m: 24px;
+  --pill: 999px;
+  --m: 32px;
+  --gap: 24px;
+  --section: 160px;
+  --ease: cubic-bezier(.2, .7, .1, 1);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--text); font-size: var(--t-b); line-height: 1.55; font-weight: 400;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; }
+p { max-width: 62ch; }
+a { color: inherit; }
+h1, h2, h3, p, blockquote { margin: 0; }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.on-red :focus-visible { outline-color: #fff; }
+::selection { background: var(--accent); color: #fff; }
+
+.wrap { padding: 0 var(--m); }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); }
+.h2 { font-family: var(--display); font-size: var(--t-l); font-weight: 600; line-height: 1.04; letter-spacing: -.035em; }
+.lead { font-size: var(--t-m); line-height: 1.38; font-weight: 500; letter-spacing: -.01em; }
+
+/* One button family: fully round. */
+.pill {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px;
+  border: 0; border-radius: var(--pill); cursor: pointer; text-decoration: none; font-weight: 700; font-size: var(--t-b);
+  background: var(--accent); color: #fff; transition: background-color .2s, transform .2s var(--ease), color .2s;
+}
+.pill:hover { background: var(--accent-press); transform: translateY(-2px); }
+.pill:active { transform: translateY(0) scale(.98); }
+.pill--white { background: #fff; color: var(--accent); }
+.pill--white:hover { background: #fff; color: var(--accent-press); }
+.pill--soft { background: var(--surface); color: var(--ink); }
+.pill--soft:hover { background: #e9e9e6; }
+.pill--glass { background: var(--on-red-soft); color: #fff; }
+.pill--glass:hover { background: rgba(255,255,255,.26); }
+.arrow { width: 18px; height: 18px; flex: 0 0 auto; transition: transform .25s var(--ease); }
+a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
+
+/* ---------- Hero: four Ukrainian cities, slowly changing ---------- */
+.hero { position: relative; height: 100svh; min-height: 820px; color: #fff; overflow: hidden; background: #2a3440; }
+.hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.6s ease; transform: scale(1.04); }
+.hero__media img.is-on { opacity: 1; animation: drift 14s linear both; }
+@keyframes drift { from { transform: scale(1.04); } to { transform: scale(1.11); } }
+.hero__scrim { position: absolute; inset: 0 30% 0 0; /* taste-skill-ignore: neutral scrim under text */ background: linear-gradient(90deg, rgba(10,12,14,.66), rgba(10,12,14,0)); pointer-events: none; }
+.hero__scrim--top { inset: 0 0 auto 0; height: 170px; /* taste-skill-ignore: neutral scrim under text */ background: linear-gradient(180deg, rgba(10,12,14,.45), rgba(10,12,14,0)); }
+.hero__scrim--low { inset: auto 0 0 0; height: 55%; /* taste-skill-ignore: neutral scrim under text */ background: linear-gradient(0deg, rgba(10,12,14,.5), rgba(10,12,14,0)); }
+
+.bar { position: absolute; z-index: 3; top: 0; left: 0; right: 0; display: flex; align-items: center; gap: 40px; padding: 24px var(--m); }
+.bar__logo img { width: 116px; height: auto; }
+.bar__nav { display: flex; gap: 4px; }
+.bar__nav a { text-decoration: none; font-weight: 700; padding: 10px 14px; border-radius: var(--pill); transition: background-color .2s; }
+.bar__nav a:hover { background: rgba(255,255,255,.18); }
+.bar__end { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+.langs { display: flex; background: rgba(20,22,24,.42); border-radius: var(--pill); padding: 4px; }
+.langs button { background: none; border: 0; border-radius: var(--pill); padding: 8px 14px; cursor: pointer; font-weight: 700; color: #fff; transition: background-color .2s, color .2s; }
+.langs button[aria-pressed="true"] { background: #fff; color: var(--ink); }
+
+.hero__body { position: absolute; z-index: 2; left: var(--m); bottom: 13vh; width: min(72vw, 1120px); }
+.hero h1 { font-family: var(--display); font-size: clamp(56px, 6.6vw, 112px); font-weight: 500; line-height: 1; letter-spacing: -.045em; max-width: 11em; }
+.hero__sub { margin-top: 28px; max-width: 27em; font-weight: 400; }
+.cta { margin-top: 44px; display: inline-flex; align-items: center; gap: 20px; min-height: 72px; padding: 0 10px 0 34px; border-radius: var(--pill); background: var(--accent); color: #fff; text-decoration: none; font-size: 20px; font-weight: 500; letter-spacing: -.01em; transition: background-color .25s, transform .25s var(--ease); }
+.cta b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.cta__ic { width: 52px; height: 52px; border-radius: 50%; background: #fff; color: var(--accent); display: grid; place-items: center; flex: 0 0 auto; transition: transform .35s var(--ease); }
+.cta__ic svg { width: 20px; height: 20px; }
+.cta:hover { background: var(--accent-press); transform: translateY(-2px); }
+.cta:hover .cta__ic { transform: rotate(-45deg); }
+.cta:active { transform: scale(.98); }
+.hero__place { position: absolute; z-index: 2; right: var(--m); bottom: var(--m); padding: 8px 16px; border-radius: var(--pill); background: rgba(20,22,24,.5); font-size: var(--t-s); font-weight: 500; }
+
+/* The lead form wears the v3 search pill. */
+.lead-form { margin-top: 40px; display: flex; align-items: stretch; background: #fff; color: var(--ink); border-radius: var(--pill); padding: 8px; width: min(100%, 940px); }
+.lead-form__field { flex: 1 1 0; min-width: 0; padding: 6px 22px; display: flex; flex-direction: column; justify-content: center; border-radius: var(--pill); transition: background-color .2s; }
+.lead-form__field:hover, .lead-form__field:focus-within { background: var(--surface); }
+.lead-form__field label { font-size: var(--t-s); color: var(--muted); font-weight: 600; }
+.lead-form__field select, .lead-form__field input { border: 0; background: transparent; padding: 0 0 2px; font-weight: 700; width: 100%; outline: none; }
+.lead-form__field select {
+  appearance: none; padding-right: 24px; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%231b1b1b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 2px center;
+}
+.lead-form__field input::placeholder { color: #9a9a9a; font-weight: 600; }
+.lead-form .pill { min-height: 64px; padding: 0 28px; flex: 0 0 auto; }
+.arch { position: relative; overflow: hidden; aspect-ratio: 4 / 5; border-radius: 50% 50% var(--r-l) var(--r-l) / 36% 36% var(--r-l) var(--r-l); background: rgba(255,255,255,.2); }
+.arch img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Why Avezor: bento ---------- */
+.why { padding-top: var(--section); }
+.why__head { grid-column: 1 / 13; display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: end; margin-bottom: 40px; }
+.why__head p, .nums__head blockquote { justify-self: end; }
+.bento { grid-column: 1 / 13; display: grid; grid-template-columns: 1.25fr 1fr 1fr; grid-auto-rows: minmax(280px, auto); gap: 16px; }
+.tile { border-radius: var(--r-l); padding: 32px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; transition: transform .35s var(--ease); }
+.tile:hover { transform: translateY(-4px); }
+.tile__big { font-family: var(--display); font-size: var(--t-xl); font-weight: 600; letter-spacing: -.045em; line-height: .9; font-variant-numeric: tabular-nums; }
+.tile__big--word, .tile h3.tile__big--word { font-size: var(--t-l); letter-spacing: -.03em; line-height: 1; }
+.tile h3 { font-family: var(--display); font-size: var(--t-m); font-weight: 600; line-height: 1.2; letter-spacing: -.01em; }
+.tile p { margin-top: 8px; }
+.tile--red { background: var(--accent); color: #fff; grid-row: span 2; }
+.tile--blush { background: var(--blush); }
+.tile--blush .tile__big { color: var(--accent); }
+.tile--deep { background: var(--deep); color: #fff; }
+.tile--grey { background: var(--surface); grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+.tile--grey > div:first-child { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.tile__pic { border-radius: var(--r-m); overflow: hidden; }
+.tile__pic img { width: 100%; height: 100%; object-fit: cover; }
+.tile--red .tile__pic { aspect-ratio: 4 / 3; }
+.tile--grey .tile__pic { min-height: 240px; }
+
+/* ---------- Services: v3 district grid, one tile per service ---------- */
+.svc { padding-top: var(--section); }
+.svc__head { grid-column: 1 / 13; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: end; gap: 32px; }
+.svc__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 330px 330px; gap: 16px; }
+.svc__tile { position: relative; border-radius: var(--r-l); overflow: hidden; color: #fff; text-decoration: none; display: block; }
+.svc__tile > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.svc__tile:hover > img { transform: scale(1.05); }
+.svc__grid .svc__tile:first-child { grid-row: span 2; }
+.svc__label { position: absolute; left: 16px; right: 16px; bottom: 16px; display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: start; background: #fff; color: var(--ink); border-radius: var(--r-m); padding: 16px 18px; }
+.svc__label b { font-family: var(--display); font-size: var(--t-m); font-weight: 600; letter-spacing: -.015em; line-height: 1.1; }
+.svc__label span { grid-column: 1; color: var(--muted); font-size: 16px; line-height: 1.4; font-weight: 500; }
+.svc__label .arrow { grid-column: 2; grid-row: 1; width: 22px; height: 22px; margin-top: 4px; }
+.svc__tile:hover .svc__label .arrow { transform: translateX(4px); }
+.svc__tile--legal { grid-column: span 2; background: var(--deep); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 32px; align-items: end; }
+.svc__tile--legal .svc__label { position: static; background: none; color: #fff; padding: 0; }
+.svc__tile--legal .svc__label span { color: #d6d6d6; }
+
+/* A drawn registry extract: the thing the legal check produces. */
+.extract { align-self: stretch; background: #fff; color: var(--ink); border-radius: var(--r-m); padding: 20px 22px 30px; position: relative; display: flex; flex-direction: column; gap: 6px; transform: rotate(-1.5deg); transition: transform .5s var(--ease); }
+.svc__tile--legal:hover .extract { transform: rotate(0); }
+.extract__t { font-family: var(--display); font-weight: 600; font-size: 16px; line-height: 1.2; }
+.extract__s { font-size: var(--t-s); color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+.extract__row { display: flex; justify-content: space-between; gap: 12px; font-size: var(--t-s); font-weight: 600; padding: 5px 10px; border-radius: 10px; background: var(--surface); }
+.extract__row i { font-style: normal; color: var(--muted); white-space: nowrap; }
+.extract__row--ok i { color: var(--accent); font-weight: 600; }
+.stamp { position: absolute; right: 18px; bottom: -22px; border-radius: var(--pill); background: var(--accent); color: #fff; padding: 10px 18px; font-family: var(--display); font-weight: 600; font-size: var(--t-s); white-space: nowrap; transform: rotate(-6deg); }
+
+/* ---------- Numbers ---------- */
+.nums { padding-top: var(--section); }
+.nums__head { grid-column: 1 / 13; display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: end; margin-bottom: 40px; }
+.nums__head blockquote { font-family: var(--display); font-size: clamp(24px, 2.3vw, 34px); font-weight: 700; line-height: 1.22; letter-spacing: -.015em; max-width: 26em; }
+.nums__panel { grid-column: 1 / 13; background: var(--blush); border-radius: var(--r-l); padding: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) .8fr; gap: 32px; align-items: stretch; min-height: 440px; }
+.num { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.num__n { font-family: var(--display); font-size: var(--t-xl); font-weight: 600; letter-spacing: -.05em; line-height: .9; color: var(--accent); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.num p { font-size: var(--t-b); font-weight: 600; line-height: 1.35; max-width: 16em; }
+.nums__pic { border-radius: var(--r-m); overflow: hidden; }
+.nums__pic img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- How it works: a dark field, four steps going down ---------- */
+.how { margin-top: var(--section); background: var(--deep); color: #fff; border-radius: var(--r-l); margin-left: 16px; margin-right: 16px; padding: 120px calc(var(--m) - 16px + 24px) 120px; }
+.how__head { grid-column: 1 / 13; margin-bottom: 64px; }
+.how__head .h2 { max-width: 14em; }
+.how__steps { grid-column: 1 / 13; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); align-items: start; }
+.how__step:nth-child(2) { margin-top: 80px; }
+.how__step:nth-child(3) { margin-top: 160px; }
+.how__step:nth-child(4) { margin-top: 240px; }
+.how__step figure { margin: 0 0 20px; border-radius: var(--r-m); overflow: hidden; background: #2b2b2b; aspect-ratio: 4 / 5; }
+.how__step img, .how__step svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+.how__step p { color: #e6e6e6; }
+.how__step strong { display: block; color: #fff; font-family: var(--display); font-size: var(--t-m); font-weight: 600; letter-spacing: -.01em; line-height: 1.2; margin-bottom: 8px; }
+
+/* Layered waves behind the dark and red panels. */
+.how, .close { position: relative; overflow: hidden; isolation: isolate; }
+.how > .grid, .close > .grid { position: relative; z-index: 1; }
+.waves { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.waves__l { animation: wave-drift calc(22s + var(--i) * 5s) ease-in-out infinite alternate; animation-delay: calc(var(--i) * -3s); }
+@keyframes wave-drift { from { transform: translateX(-60px); } to { transform: translateX(60px); } }
+
+/* ---------- FAQ ---------- */
+.faq { padding-top: var(--section); align-items: start; }
+.faq__head { grid-column: 1 / 13; margin-bottom: 40px; }
+.faq__text { grid-column: 1 / 5; position: sticky; top: 40px; }
+.faq__contacts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.faq__list { grid-column: 6 / 13; display: flex; flex-direction: column; gap: 12px; }
+details { background: var(--surface); border-radius: var(--r-m); padding: 22px 28px; transition: background-color .25s; }
+details:hover { background: #ededea; }
+details[open] { background: var(--blush); }
+summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: var(--display); font-size: var(--t-b); font-weight: 600; line-height: 1.35; letter-spacing: -.005em; }
+summary::-webkit-details-marker { display: none; }
+.plus { position: relative; width: 36px; height: 36px; flex: 0 0 auto; border-radius: 50%; background: #fff; transition: transform .3s var(--ease); }
+.plus::before, .plus::after { content: ""; position: absolute; left: 11px; top: 17px; width: 14px; height: 2px; border-radius: 2px; background: var(--ink); }
+.plus::after { transform: rotate(90deg); transition: transform .3s var(--ease); }
+details[open] .plus::after { transform: rotate(0); }
+details p { margin-top: 12px; max-width: 60ch; }
+
+/* ---------- Closing: the lead form again, on red ---------- */
+.close { margin: var(--section) 16px 0; background: #fdf3f1; color: var(--ink); border-radius: var(--r-l); padding: 96px calc(var(--m) - 16px + 24px); }
+.close .lead-form { box-shadow: none; }
+.close__text { grid-column: 1 / 9; align-self: center; }
+.close__text p { margin-top: 24px; max-width: 34em; }
+.close .lead-form { margin-top: 36px; width: 100%; }
+.close__alt { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 20px; }
+.close__alt .pill { min-height: 46px; background: rgba(255,255,255,.75); color: var(--ink); }
+.close__alt .pill:hover { background: #fff; }
+.close__pic { grid-column: 10 / 13; align-self: center; }
+.close__pic .arch img { opacity: 1; animation: none; }
+
+/* ---------- Footer ---------- */
+.foot { margin: 16px; display: grid; grid-template-columns: 5fr 7fr; gap: 16px; min-height: 620px; }
+.foot__pic { border-radius: var(--r-l); overflow: hidden; }
+.foot__pic img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 60%; }
+.foot__panel { background: var(--deep); color: #fff; border-radius: var(--r-l); padding: 48px 48px 32px; display: flex; flex-direction: column; }
+.foot__panel > img { width: 104px; height: auto; }
+.foot__nav { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 32px; }
+.foot__nav a { display: inline-block; font-family: var(--display); font-size: var(--t-m); font-weight: 600; letter-spacing: -.015em; text-decoration: none; padding: 4px 0; transition: transform .3s var(--ease), color .2s; }
+.foot__nav a:hover { transform: translateX(8px); color: #ffb3ad; }
+.foot__info { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+.foot__info .pill { background: rgba(255,255,255,.1); color: #fff; }
+.foot__info .pill:hover { background: rgba(255,255,255,.2); }
+.foot__legal { margin-top: auto; padding-top: 40px; font-size: var(--t-s); color: #c4c4c4; }
+.foot__legal p + p { margin-top: 6px; max-width: 90ch; }
+.foot__legal a { color: #e6e6e6; }
+
+/* ---------- Entrances ---------- */
+.js .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .9s var(--ease); transition-delay: var(--d, 0ms); }
+.js .rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+  .js .rv { opacity: 1; transform: none; }
+}
+
+/* ---------- Tablet: hero flows, sections stack ---------- */
+@media (max-width: 1100px) {
+  :root { --m: 20px; --gap: 16px; --section: 104px; --t-m: 22px; }
+  .bar__nav { display: none; }
+  .hero__scrim { inset: 0; /* taste-skill-ignore: neutral scrim under text */ background: linear-gradient(180deg, rgba(10,12,14,.2), rgba(10,12,14,.35) 40%, rgba(10,12,14,.75)); }
+  .hero__scrim--low { display: none; }
+  .hero__body { right: var(--m); width: auto; bottom: 96px; }
+  .lead-form { flex-wrap: wrap; border-radius: var(--r-m); }
+  .lead-form__field { flex-basis: 30%; }
+  .lead-form .pill { width: 100%; margin-top: 6px; }
+  .why__head, .nums__head { grid-template-columns: 1fr; gap: 20px; }
+  .why__head p, .nums__head blockquote { justify-self: start; }
+  .bento { grid-template-columns: 1fr 1fr; }
+  .tile--red { grid-row: auto; grid-column: span 2; }
+  .svc__head { flex-direction: column; align-items: start; }
+  .svc__grid { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 330px; }
+  .svc__grid .svc__tile:first-child { grid-row: auto; grid-column: span 2; }
+  .svc__tile--legal { grid-auto-rows: auto; }
+  .nums__panel { grid-template-columns: repeat(3, 1fr); }
+  .nums__pic { grid-column: 1 / -1; min-height: 280px; }
+  .how__steps { grid-template-columns: 1fr 1fr; }
+  .how__step:nth-child(n) { margin-top: 0; }
+  .how__step:nth-child(even) { margin-top: 80px; }
+  .faq__text { grid-column: 1 / -1; position: static; margin-bottom: 32px; }
+  .faq__list { grid-column: 1 / -1; }
+  .close__text { grid-column: 1 / -1; }
+  .close__pic { grid-column: 1 / -1; margin-top: 40px; }
+  .close__pic .arch { aspect-ratio: 16 / 9; border-radius: var(--r-m); }
+}
+
+/* ---------- Mobile: header, burger menu and section layouts ---------- */
+.mbar, .mmenu { display: none; }
+@media (max-width: 800px) {
+  :root { --m: 20px; --gap: 12px; --section: 96px; --t-xl: clamp(32px, 8.6vw, 60px); --t-l: 30px; --t-m: 20px; --t-b: 17px; --r-l: 28px; --r-m: 20px; }
+  body.menu-open { overflow: hidden; }
+
+  .mbar { display: flex; position: fixed; z-index: 1001; top: 0; left: 0; right: 0; height: 64px; align-items: center; gap: 4px; padding: 0 12px 0 var(--m); background: rgba(255,255,255,0); color: #fff; transition: background-color .3s ease, color .3s ease, box-shadow .3s ease; }
+  .mbar.is-solid, .menu-open .mbar { background: #fff; color: var(--ink); }
+  .mbar__light { position: absolute; inset: 0; transition: opacity .3s ease; }
+  .mbar__dark { transition: opacity .3s ease; opacity: 0; }
+  .mbar.is-solid .mbar__dark, .menu-open .mbar__dark { opacity: 1; }
+  .mbar.is-solid .mbar__light, .menu-open .mbar__light { opacity: 0; }
+  .mbar__logo { margin-right: auto; position: relative; display: block; }
+  .mbar__logo img { width: 92px; height: auto; }
+  .mbar__icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; color: inherit; transition: background-color .2s; }
+  .mbar__icon:hover { background: rgba(127,127,127,.16); }
+  .mbar__icon svg { width: 24px; height: 24px; }
+  .menu-open .mbar__icon { visibility: hidden; }
+  .burger { width: 44px; height: 44px; border: 0; background: none; color: inherit; border-radius: 50%; position: relative; cursor: pointer; }
+  .burger span { position: absolute; left: 11px; right: 11px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .35s var(--ease), opacity .2s; }
+  .burger span:nth-child(1) { top: 15px; } .burger span:nth-child(2) { top: 21px; } .burger span:nth-child(3) { top: 27px; }
+  .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  .mmenu { display: flex; flex-direction: column; position: fixed; z-index: 1000; top: 64px; left: 0; right: 0; bottom: 0; background: #fbfbfb; transform: translateX(100%); visibility: hidden; transition: transform .28s ease-out, visibility 0s linear .28s; }
+  .mmenu.is-open { transform: none; visibility: visible; transition: transform .28s ease-out, visibility 0s; }
+  .mmenu__body { flex: 1; overflow-y: auto; overscroll-behavior: contain; }
+  .mmenu__top { display: flex; flex-direction: column; gap: 12px; padding: 16px 16px 8px; }
+  .macc { display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 16px; background: #f1f1f3; text-decoration: none; color: var(--ink); }
+  .macc__ava { width: 44px; height: 44px; flex: 0 0 auto; border-radius: 50%; background: #fff; color: #5b5b63; display: grid; place-items: center; }
+  .macc__ava svg { width: 24px; height: 24px; }
+  .macc__text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .macc__text b { font-size: 15px; font-weight: 600; }
+  .macc__text span { font-size: 14px; color: var(--muted); line-height: 1.35; }
+  .macc__chev { width: 20px; height: 20px; color: #8a8a93; }
+  .madd { display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border-radius: 14px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; transition: background-color .2s; }
+  .madd:active { background: #000; }
+  .madd svg { width: 22px; height: 22px; }
+  .mlist { padding: 8px 0; }
+  .mrow { display: flex; align-items: center; justify-content: space-between; min-height: 58px; padding: 0 var(--m); font-size: 16px; font-weight: 700; color: var(--ink); text-decoration: none; list-style: none; cursor: pointer; transition: background-color .2s, color .2s; font-family: var(--text); letter-spacing: 0; }
+  .mrow::-webkit-details-marker { display: none; }
+  .mrow__chev { width: 20px; height: 20px; color: var(--accent); transition: transform .3s var(--ease); }
+  .mgroup { background: none; border-radius: 0; padding: 0; }
+  .mgroup:hover, .mgroup[open] { background: none; }
+  .mgroup[open] > .mrow { background: #f1f1f1; color: var(--accent); }
+  .mgroup[open] .mrow__chev { transform: rotate(180deg); }
+  .msub { display: flex; align-items: center; min-height: 52px; padding: 0 var(--m) 0 36px; font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; background: #fdfdfd; }
+  .msub:active { background: #f1f1f1; }
+  .mregion { margin: 8px 16px 24px; padding: 14px; border-radius: 16px; background: #f1f1f3; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .mregion__row { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .mregion__flag { width: 24px; height: 16px; flex: 0 0 auto; border-radius: 4px; }
+  .mregion__text { display: flex; flex-direction: column; font-size: 14px; color: var(--muted); }
+  .mregion__text b { font-size: 15px; color: var(--ink); font-weight: 700; }
+  .langs--m { background: #e4e4e7; }
+  .langs--m button { color: var(--ink); padding: 6px 10px; }
+  .langs--m button[aria-pressed="true"] { background: #fff; color: var(--accent); }
+  .mmenu__foot { flex: 0 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 14px var(--m) calc(14px + env(safe-area-inset-bottom)); background: #fbfbfb; }
+  .mcta { display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border-radius: var(--pill); background: #fff; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 15px; outline: 2px solid #ececef; outline-offset: -2px; }
+  .mcta:first-child { background: var(--accent); color: #fff; outline: 0; }
+  .mcta svg { width: 22px; height: 22px; }
+
+  .bar { display: none; }
+  .hero { min-height: 600px; }
+  .hero__body { bottom: 84px; }
+  .hero h1 { font-size: clamp(34px, 9.6vw, 56px); letter-spacing: -.04em; }
+  .hero__scrim--top { inset: 0 0 auto 0; height: 160px; /* taste-skill-ignore: neutral scrim under the see-through header */ background: linear-gradient(180deg, rgba(10,12,14,.5), rgba(10,12,14,0)); }
+  .hero__sub { margin-top: 16px; }
+  .cta { margin-top: 28px; width: 100%; max-width: 440px; justify-content: space-between; min-height: 64px; padding-left: 24px; font-size: var(--t-b); }
+  .cta__ic { width: 46px; height: 46px; }
+  .hero__place { left: var(--m); right: auto; bottom: 24px; }
+  .lead-form { flex-direction: column; padding: 6px; margin-top: 24px; }
+  .lead-form__field { padding: 10px 14px; border-radius: 14px; flex-basis: auto; }
+  .lead-form .pill { min-height: 56px; margin-top: 4px; padding: 0 16px; }
+
+  .why__head, .svc__head, .nums__head { gap: 16px; margin-bottom: 28px; }
+  .bento { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 12px; margin-top: 0; }
+  .tile { padding: 24px; grid-column: auto !important; grid-row: auto !important; }
+  .tile--grey { grid-template-columns: 1fr; }
+  .tile--grey .tile__pic { min-height: 0; aspect-ratio: 4 / 3; }
+  .tile__big { font-size: 64px; }
+  .tile__big--word, .tile h3.tile__big--word { font-size: var(--t-l); }
+
+  .svc__grid { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 12px; }
+  .svc__grid .svc__tile:first-child { grid-column: auto; }
+  .svc__tile { min-height: 360px; border-radius: var(--r-m); }
+  .svc__label { left: 10px; right: 10px; bottom: 10px; padding: 14px; border-radius: 16px; }
+  
+  .svc__tile--legal { grid-column: auto; grid-template-columns: 1fr; padding: 24px; min-height: 0; }
+  .extract { transform: none; margin-bottom: 36px; }
+  .stamp { right: 12px; }
+
+  .nums__head blockquote { font-size: 22px; }
+  .nums__panel { grid-template-columns: 1fr; padding: 24px; gap: 28px; min-height: 0; }
+  .num__n { font-size: 64px; }
+  .num p { font-size: 17px; }
+  .nums__pic { grid-column: auto; min-height: 220px; }
+
+  .how { margin-left: 8px; margin-right: 8px; padding: 72px var(--m); }
+  .how__head { margin-bottom: 36px; }
+  .how__steps { grid-template-columns: 1fr; gap: 36px; }
+  .how__step:nth-child(n) { margin-top: 0; }
+  .how__step figure { aspect-ratio: 16 / 10; }
+
+  .faq__head { margin-bottom: 20px; }
+  .faq__text { margin-bottom: 24px; }
+  .faq__list { gap: 8px; }
+  details { padding: 16px 18px; }
+  .plus { width: 30px; height: 30px; }
+  .plus::before, .plus::after { left: 8px; top: 14px; }
+
+  .close { margin: var(--section) 8px 0; padding: 48px var(--m); }
+  .close__pic .arch { aspect-ratio: 16 / 11; }
+
+  .foot { grid-template-columns: 1fr; margin: 8px 0 0; gap: 0; min-height: 0; }
+  .foot__pic { height: 240px; border-radius: var(--r-l) var(--r-l) 0 0; }
+  .foot__panel { padding: 32px var(--m) calc(24px + env(safe-area-inset-bottom)); border-radius: 0; }
+  .foot__nav { gap: 4px 16px; margin-top: 28px; }
+  .foot__nav a { font-size: 17px; }
+  .foot__info .pill { min-height: 44px; padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="mbar" data-mbar>
+  <a class="mbar__logo" href="#top" aria-label="Avezor"><img class="mbar__dark" src="assets/logo.svg" width="97" height="31" alt="Avezor"><img class="mbar__light" src="assets/white-logo.svg" width="87" height="28" alt=""></a>
+  <a class="mbar__icon" href="https://avezor.ua/" aria-label="Пошук" data-tl="m.search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+  <a class="mbar__icon" href="https://avezor.ua/" aria-label="Обране" data-tl="m.fav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Меню" data-tl="m.menu" data-burger><span></span><span></span><span></span></button>
+</div>
+
+<nav class="mmenu" id="mmenu" aria-label="Mobile menu" data-mmenu aria-hidden="true" inert>
+  <div class="mmenu__body">
+    <div class="mmenu__top">
+      <a class="macc" href="https://avezor.ua/">
+        <span class="macc__ava"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 19.5c1.2-3.3 3.9-5 7-5s5.8 1.7 7 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span class="macc__text"><b data-t="m.acc">Увійти або зареєструватися</b><span data-t="m.accSub">Зберігайте об’єкти, добірки та пошуки</span></span>
+        <svg class="macc__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M8 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="madd" href="https://avezor.ua/dodajte-svij-obyekt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-t="m.add">Додати об’єкт</span></a>
+    </div>
+    <div class="mlist">
+      <details class="mgroup"><summary class="mrow"><span data-t="m.re">Нерухомість</span><svg class="mrow__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <a class="msub" href="https://avezor.ua/" data-t="m.re1">Купівля</a>
+        <a class="msub" href="https://avezor.ua/" data-t="m.re2">Оренда</a>
+        <a class="msub" href="https://avezor.ua/" data-t="m.re3">Комерційна нерухомість</a>
+      </details>
+      <details class="mgroup"><summary class="mrow"><span data-t="m.sv">Послуги</span><svg class="mrow__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <a class="msub" href="#services" data-t="m.sv1">Юридичний супровід</a>
+        <a class="msub" href="#services" data-t="m.sv2">Продаж вашого об’єкта</a>
+        <a class="msub" href="#services" data-t="m.sv3">Усі послуги</a>
+      </details>
+      <details class="mgroup"><summary class="mrow"><span data-t="m.co">Компанія</span><svg class="mrow__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <a class="msub" href="https://avezor.ua/" data-t="m.co1">Про нас</a>
+        <a class="msub" href="https://avezor.ua/" data-t="m.co2">Блог</a>
+        <a class="msub" href="https://avezor.ua/vakansiya" data-t="m.co4">Вакансії</a>
+        <a class="msub" href="#lead" data-t="m.co3">Контакти</a>
+      </details>
+    </div>
+    <div class="mregion">
+      <div class="mregion__row">
+        <svg class="mregion__flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="8" fill="#0057b7"/><rect y="8" width="24" height="8" fill="#ffd700"/></svg>
+        <span class="mregion__text"><b data-t="m.country">Україна · avezor.ua</b><span>₴ UAH</span></span>
+      </div>
+      <div class="langs langs--m" role="group" aria-label="Language">
+        <button type="button" data-lang="uk" aria-pressed="true">UK</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+  <div class="mmenu__foot">
+    <a class="mcta" href="https://t.me/avezor"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4V5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-t="m.write">Написати</span></a>
+    <a class="mcta" href="tel:+380985585050"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3l1.5 4-2 1.2a10 10 0 0 0 5.3 5.3l1.2-2 4 1.5v3a2 2 0 0 1-2 2A15 15 0 0 1 5 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-t="m.call">Подзвонити</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__media" data-hero>
+    <img class="is-on" src="assets/found/commons-94366364.jpg" width="1920" height="895" alt="Держпром на майдані Свободи в Харкові у вечірньому світлі" data-ta="alt.h1">
+    <img src="assets/found/2017.jpg" width="1920" height="1638" alt="Андріївська церква та будинки Андріївського узвозу в Києві ввечері" data-ta="alt.h2">
+    <img src="assets/found/rynok-square-in-lviv-8673813675.jpg" width="1920" height="1275" alt="Кам’яниці на площі Ринок у Львові" data-ta="alt.h3">
+    <img src="assets/found/podil-at-night-49530393651.jpg" width="1920" height="862" alt="Нічний Поділ і Дніпро в Києві" data-ta="alt.h4">
+  </div>
+  <div class="hero__scrim"></div>
+  <div class="hero__scrim hero__scrim--top"></div>
+  <div class="hero__scrim hero__scrim--low"></div>
+
+  <div class="bar">
+    <a class="bar__logo" href="#top" aria-label="Avezor"><img src="assets/white-logo.svg" width="87" height="28" alt="Avezor"></a>
+    <nav class="bar__nav" aria-label="Main">
+      <a href="https://avezor.ua/buy" data-t="nav.buy">Купити</a>
+      <a href="https://avezor.ua/owners" data-t="nav.sell">Продати</a>
+      <a href="https://avezor.ua/rent" data-t="nav.rent">Оренда</a>
+      <a href="https://avezor.ua/financial-and-legal-support" data-t="nav.legal">Юридичні послуги</a>
+      <a href="#numbers" data-t="nav.about">Про компанію</a>
+    </nav>
+    <div class="bar__end">
+      <div class="langs" role="group" aria-label="Language">
+        <button type="button" data-lang="uk" aria-pressed="true">UK</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="pill" href="#lead" data-t="nav.cta">Консультація</a>
+    </div>
+  </div>
+
+  <div class="hero__body">
+    <h1 class="rv" data-t="hero.h1">Безпечна купівля та продаж нерухомості</h1>
+    <p class="hero__sub lead rv" style="--d:90ms" data-t="hero.sub">З юридичною гарантією Avezor: юрист перевіряє кожен об’єкт до угоди.</p>
+    <a class="cta rv" style="--d:180ms" href="https://avezor.ua/buy"><span><span data-t="hero.cta">Переглянути</span> <b data-n="12453">12 453</b> <span data-t="hero.cta2">об’єкти</span></span><span class="cta__ic" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  </div>
+  <p class="hero__place" aria-hidden="true" data-place>Харків · Держпром</p>
+</header>
+
+<main>
+
+<section class="why wrap grid" aria-labelledby="why-h">
+  <div class="why__head">
+    <h2 id="why-h" class="h2 rv" data-t="why.h">Чому вибирають Avezor</h2>
+    <p class="rv" style="--d:80ms" data-t="why.p">Самостійний пошук або продаж нерухомості часто супроводжується ризиками: прихованими обтяженнями, юридичними пастками та втратою часу. Ми перетворюємо складний процес на просту та безпечну процедуру.</p>
+  </div>
+  <div class="bento">
+    <div class="tile tile--red rv">
+      <div>
+        <div class="tile__big" data-count="100" data-suffix="%">100%</div>
+        <h3 style="margin-top:20px" data-t="w1.h">Юридична безпека</h3>
+        <p data-t="w1.p">Наші юристи перевіряють історію власності, наявність арештів, боргів та правоустановчі документи ще до укладення угоди.</p>
+      </div>
+      <div class="tile__pic"><img src="assets/listings/BU46150427-0.jpg" width="825" height="464" alt="Новий житловий комплекс у Львові з бірюзовими дахами біля Високого Замку" data-ta="alt.w1"></div>
+    </div>
+    <div class="tile tile--blush rv" style="--d:80ms">
+      <div class="tile__big" data-count="12453">12 453</div>
+      <div><h3 data-t="w2.h">Актуальна база об’єктів</h3><p data-t="w2.p">Стільки об’єктів на продаж у базі зараз. Працюємо тільки з перевіреними продавцями та забудовниками.</p></div>
+    </div>
+    <div class="tile tile--deep rv" style="--d:160ms">
+      <div class="tile__big"><span data-count="24">24</span> <span data-t="w3.unit">год</span></div>
+      <div><h3 data-t="w3.h">Економія вашого часу</h3><p data-t="w3.p">Беремо на себе всі переговори, організацію переглядів та підготовку документів.</p></div>
+    </div>
+    <div class="tile tile--grey rv" style="--d:240ms">
+      <div>
+        <h3 class="tile__big tile__big--word" data-t="w4.h">Вигідні умови</h3>
+        <p data-t="w4.p">Допомагаємо узгодити найкращу ціну та умови розрахунку.</p>
+      </div>
+      <div class="tile__pic"><img src="assets/listings/BU50959470-0.jpg" width="544" height="682" alt="Кухня-вітальня з ремонтом у новобудові у Львові" data-ta="alt.w4"></div>
+    </div>
+  </div>
+</section>
+
+<section class="svc wrap" id="services" aria-labelledby="svc-h">
+  <div class="grid">
+    <div class="svc__head">
+      <h2 id="svc-h" class="h2 rv" data-t="svc.h">Наші ключові послуги</h2>
+      <a class="pill pill--soft rv" style="--d:80ms" href="https://avezor.ua/"><span data-t="svc.all">Переглянути всі послуги</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+  <div class="svc__grid">
+    <a class="svc__tile rv" href="https://avezor.ua/"><img src="assets/listings/BU35600005-0.jpg" width="1000" height="750" alt="Новий житловий будинок у Шевченківському районі Львова" data-ta="alt.s1">
+      <span class="svc__label"><b data-t="s1.h">Купівля нерухомості</b><span data-t="s1.p">Допомога у виборі квартири на первинному чи вторинному ринку, інвестиційні об’єкти з високою окупністю.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a class="svc__tile rv" style="--d:80ms" href="https://avezor.ua/dodajte-svij-obyekt"><img src="assets/listings/BU14824633-0.jpg" width="1000" height="955" alt="Дуплекс на вулиці Долинній у Львові" data-ta="alt.s2">
+      <span class="svc__label"><b data-t="s2.h">Продаж нерухомості</b><span data-t="s2.p">Професійна оцінка, ефективний маркетинг вашого об’єкта та швидкий вихід на угоду за максимальною ціною.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a class="svc__tile rv" style="--d:160ms" href="https://avezor.ua/"><img src="assets/listings/RE55273134-0.jpg" width="1000" height="750" alt="Вітальня двокімнатної квартири в оренду в Галицькому районі Львова" data-ta="alt.s3">
+      <span class="svc__label"><b data-t="s3.h">Оренда нерухомості</b><span data-t="s3.p">Підбір житлової та комерційної нерухомості для довгострокової оренди.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a class="svc__tile svc__tile--legal rv" style="--d:240ms" href="https://avezor.ua/">
+      <span class="svc__label"><b data-t="s4.h">Юридичний супровід</b><span data-t="s4.p">Повний комплекс юридичних послуг — від перевірки документів до оформлення права власності у нотаріуса.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="extract" aria-hidden="true">
+        <span class="extract__t" data-t="ex.t">Витяг з Державного реєстру речових прав</span>
+        <span class="extract__s" data-t="ex.s">Перевірка перед задатком</span>
+        <span class="extract__row extract__row--ok"><span data-t="ex.1">Право власності</span><i data-t="ex.ok">підтверджено</i></span>
+        <span class="extract__row extract__row--ok"><span data-t="ex.2">Арешти</span><i data-t="ex.no">не виявлено</i></span>
+        <span class="extract__row extract__row--ok"><span data-t="ex.3">Іпотека</span><i data-t="ex.no">не виявлено</i></span>
+        <span class="extract__row extract__row--ok"><span data-t="ex.4">Заборона відчуження</span><i data-t="ex.no">не виявлено</i></span>
+        <span class="stamp" data-t="ex.stamp">Перевірено Avezor</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section class="nums wrap grid" id="numbers" aria-labelledby="nums-h">
+  <div class="nums__head">
+    <h2 id="nums-h" class="h2 rv" data-t="nums.h">Avezor у цифрах</h2>
+    <blockquote class="rv" style="--d:80ms" data-t="nums.q">«Ми беремо відповідальність за юридичну чистоту кожної угоди, захищаючи ваші інтереси на кожному етапі.»</blockquote>
+  </div>
+  <div class="nums__panel rv" style="--d:120ms">
+    <div class="num"><div class="num__n" data-count="10" data-suffix="+">10+</div><p data-t="n1">років досвіду на ринку нерухомості та юридичних послуг</p></div>
+    <div class="num"><div class="num__n" data-count="5000" data-suffix="+">5 000+</div><p data-t="n2">успішно закритих угод</p></div>
+    <div class="num"><div class="num__n" data-count="98" data-suffix="%">98%</div><p data-t="n3">задоволених клієнтів, які рекомендують нас друзям</p></div>
+    <div class="nums__pic"><img src="assets/listings/BU93386127-0.jpg" width="979" height="1000" alt="Вид на Київський район Харкова з вікна новобудови" data-ta="alt.n"></div>
+  </div>
+</section>
+
+<section class="how" aria-labelledby="how-h">
+  <svg class="waves" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path class="waves__l" style="--i:0" fill="#212121" d="M-160,161 C0,161 0,169 160,169 C340,169 340,120 520,120 C700,120 700,134 880,134 C1060,134 1060,156 1240,156 C1420,156 1420,163 1600,163 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:1" fill="#2d2d2d" d="M-160,239 C0,239 0,327 160,327 C340,327 340,295 520,295 C700,295 700,275 880,275 C1060,275 1060,261 1240,261 C1420,261 1420,316 1600,316 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:2" fill="#2d2d2d" d="M-160,425 C0,425 0,361 160,361 C340,361 340,408 520,408 C700,408 700,379 880,379 C1060,379 1060,427 1240,427 C1420,427 1420,370 1600,370 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:3" fill="#3f3f3f" d="M-160,538 C0,538 0,530 160,530 C340,530 340,495 520,495 C700,495 700,482 880,482 C1060,482 1060,579 1240,579 C1420,579 1420,583 1600,583 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:4" fill="#393939" d="M-160,612 C0,612 0,648 160,648 C340,648 340,704 520,704 C700,704 700,620 880,620 C1060,620 1060,645 1240,645 C1420,645 1420,660 1600,660 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:5" fill="#3f3f3f" d="M-160,796 C0,796 0,753 160,753 C340,753 340,741 520,741 C700,741 700,830 880,830 C1060,830 1060,771 1240,771 C1420,771 1420,748 1600,748 L1600,900 L-160,900 Z"/></svg>
+  <div class="grid">
+    <div class="how__head">
+      <h2 id="how-h" class="h2 rv" data-t="how.h">4 простих кроки до угоди</h2>
+    </div>
+    <ol class="how__steps">
+      <li class="how__step rv">
+        <figure><img src="assets/found/sumska-street-kharkiv-2021-02.jpg" width="1920" height="1280" alt="Вулиця Сумська в Харкові взимку" data-ta="alt.st1"></figure>
+        <p><strong data-t="st1.h">Заявка та консультація</strong><span data-t="st1.p">Ви залишаєте заявку, ми уточнюємо ваші критерії та бюджет.</span></p>
+      </li>
+      <li class="how__step rv" style="--d:100ms">
+        <figure><img src="assets/listings/RE95461947-0.jpg" width="1000" height="750" alt="Світла вітальня квартири з дизайнерським ремонтом у Львові" data-ta="alt.st2"></figure>
+        <p><strong data-t="st2.h">Підбір та перегляди</strong><span data-t="st2.p">Формуємо персональну добірку та організовуємо зручний графік переглядів.</span></p>
+      </li>
+      <li class="how__step rv" style="--d:200ms">
+        <figure>
+          <svg viewBox="0 0 400 500" role="img" aria-label="План квартири з технічного паспорта, одна кімната виділена для звірки" data-tl="alt.st3">
+            <rect width="400" height="500" fill="#2b2b2b"/>
+            <g fill="none" stroke="#f4f4f2" stroke-width="5" stroke-linejoin="round">
+              <rect x="50" y="70" width="300" height="360"/>
+              <path d="M50 230h120M170 70v260M170 330h180M260 230h90M260 230v100M110 330v100M50 330h60"/>
+            </g>
+            <g fill="#f4f4f2" font-family="Onest, sans-serif" font-weight="700" font-size="22" text-anchor="middle">
+              <text x="110" y="160">16,2</text><text x="260" y="160">15,3</text><text x="110" y="290">11,6</text>
+              <text x="305" y="290">8,4</text><text x="230" y="390">8,3</text><text x="80" y="390">4,7</text>
+            </g>
+            <rect x="170" y="70" width="180" height="160" fill="#cf1409" fill-opacity=".22" stroke="#cf1409" stroke-width="6" stroke-dasharray="14 10"/>
+            <g fill="#bdbdbd" font-family="Onest, sans-serif" font-weight="600" font-size="15">
+              <text x="50" y="52">Масштаб 1:100</text><text x="350" y="465" text-anchor="end">Технічний паспорт</text>
+            </g>
+          </svg>
+        </figure>
+        <p><strong data-t="st3.h">Юридична перевірка</strong><span data-t="st3.p">Наші юристи проводять повний аудит об’єкта та документів.</span></p>
+      </li>
+      <li class="how__step rv" style="--d:300ms">
+        <figure><img src="assets/listings/BU66756627-0.jpg" width="1000" height="604" alt="Вітальня з панорамним вікном у новобудові в Харкові" data-ta="alt.st4"></figure>
+        <p><strong data-t="st4.h">Угода та нотаріус</strong><span data-t="st4.p">Безпечне підписання договору та підтвердження права власності.</span></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="faq wrap grid" id="ask" aria-labelledby="ask-h">
+  <div class="faq__head"><h2 id="ask-h" class="h2 rv" data-t="ask.h">Часті запитання</h2></div>
+  <div class="faq__text">
+    <p class="lead rv" data-t="ask.p">Про вартість послуг, юридичну перевірку та купівлю в іпотеку. Не знайшли відповідь? Напишіть нам.</p>
+    <div class="faq__contacts rv" style="--d:160ms">
+      <a class="pill" href="https://t.me/avezor">Telegram</a>
+      <a class="pill pill--soft" href="viber://chat?number=380985585050">Viber</a>
+      <a class="pill pill--soft" href="https://wa.me/380985585050">WhatsApp</a>
+    </div>
+  </div>
+  <div class="faq__list">
+    <details open><summary><span data-t="q1">Скільки коштують послуги агентства нерухомості Avezor?</span><i class="plus" aria-hidden="true"></i></summary><p data-t="a1">Вартість залежить від типу угоди та обсягу послуг. Ми працюємо прозоро — фіксований відсоток або вартість послуги обговорюється до початку співпраці та фіксується у договорі.</p></details>
+    <details><summary><span data-t="q2">Як відбувається юридична перевірка об’єкта?</span><i class="plus" aria-hidden="true"></i></summary><p data-t="a2">Наші профільні юристи аналізують реєстри речових прав, перевіряють відсутність судових спорів, арештів, застав, боргів та правомірність попередніх угод.</p></details>
+    <details><summary><span data-t="q3">Чи допомагаєте ви купувати нерухомість в іпотеку або за державними програмами (єОселя)?</span><i class="plus" aria-hidden="true"></i></summary><p data-t="a3">Так, ми супроводжуємо угоди з залученням кредитних коштів та державних програм, підготовлюємо необхідний пакет документів для банків.</p></details>
+  </div>
+</section>
+
+<section class="close" id="lead" aria-labelledby="close-h">
+  <svg class="waves" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path class="waves__l" style="--i:0" fill="#fcece9" d="M-160,31 C0,31 0,120 160,120 C340,120 340,110 520,110 C700,110 700,92 880,92 C1060,92 1060,81 1240,81 C1420,81 1420,74 1600,74 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:1" fill="#fae4e0" d="M-160,215 C0,215 0,229 160,229 C340,229 340,204 520,204 C700,204 700,169 880,169 C1060,169 1060,223 1240,223 C1420,223 1420,158 1600,158 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:2" fill="#f8dbd6" d="M-160,385 C0,385 0,386 160,386 C340,386 340,370 520,370 C700,370 700,305 880,305 C1060,305 1060,377 1240,377 C1420,377 1420,388 1600,388 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:3" fill="#f5d1cb" d="M-160,469 C0,469 0,518 160,518 C340,518 340,535 520,535 C700,535 700,538 880,538 C1060,538 1060,468 1240,468 C1420,468 1420,470 1600,470 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:4" fill="#f2c7c0" d="M-160,613 C0,613 0,660 160,660 C340,660 340,625 520,625 C700,625 700,574 880,574 C1060,574 1060,644 1240,644 C1420,644 1420,661 1600,661 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:5" fill="#efbcb4" d="M-160,744 C0,744 0,741 160,741 C340,741 340,788 520,788 C700,788 700,781 880,781 C1060,781 1060,721 1240,721 C1420,721 1420,777 1600,777 L1600,900 L-160,900 Z"/></svg>
+  <div class="grid">
+    <div class="close__text">
+      <h2 id="close-h" class="h2" data-t="close.h">Готові зробити перший крок?</h2>
+      <p class="lead" data-t="close.p">Залиште заявку зараз і отримайте безкоштовну консультацію юриста та добірку з 5 найкращих об’єктів за вашими критеріями вже сьогодні.</p>
+      <form class="lead-form" data-lead>
+        <div class="lead-form__field">
+          <label for="c-name" data-t="f.name">Ім’я</label>
+          <input id="c-name" name="name" type="text" autocomplete="given-name" placeholder="Олена" data-tp="f.nameP" required>
+        </div>
+        <div class="lead-form__field">
+          <label for="c-phone" data-t="f.phone">Телефон</label>
+          <input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380" required>
+        </div>
+        <button class="pill" type="submit"><span data-t="f.cta2">Отримати добірку та консультацію</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </form>
+      <div class="close__alt">
+        <a class="pill pill--glass" href="https://t.me/avezor">Telegram</a>
+        <a class="pill pill--glass" href="viber://chat?number=380985585050">Viber</a>
+        <a class="pill pill--glass" href="tel:+380985585050">+380 98 558 50 50</a>
+      </div>
+    </div>
+    <div class="close__pic">
+      <div class="arch"><img src="assets/listings/RE24048558-0.jpg" width="1000" height="750" alt="Простора вітальня-їдальня трикімнатної квартири у Львові" data-ta="alt.c"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__pic"><img src="assets/found/andriyivskyy-descent-8600676227.jpg" width="1920" height="1275" alt="Будинки Андріївського узвозу в Києві влітку" data-ta="alt.f"></div>
+  <div class="foot__panel">
+    <img src="assets/white-logo.svg" width="87" height="28" alt="Avezor">
+    <ul class="foot__nav">
+      <li><a href="#services" data-t="nav.buy">Купити</a></li>
+      <li><a href="#numbers" data-t="nav.about">Про компанію</a></li>
+      <li><a href="#services" data-t="nav.sell">Продати</a></li>
+      <li><a href="https://avezor.ua/" data-t="nav.blog">Блог</a></li>
+      <li><a href="#services" data-t="nav.rent">Оренда</a></li>
+      <li><a href="https://avezor.ua/vakansiya" data-t="nav.jobs">Вакансії</a></li>
+      <li><a href="#services" data-t="nav.legal">Юридичні послуги</a></li>
+      <li><a href="#lead" data-t="nav.contacts">Контакти</a></li>
+    </ul>
+    <div class="foot__info">
+      <a class="pill" href="tel:+380985585050">+380 98 558 50 50</a>
+      <a class="pill" href="tel:+380635585050">+380 63 558 50 50</a>
+      <a class="pill" href="mailto:an.avezor@gmail.com">an.avezor@gmail.com</a>
+      <a class="pill" href="https://t.me/avezor">Telegram</a>
+      <a class="pill" href="viber://chat?number=380985585050">Viber</a>
+    </div>
+    <div class="foot__legal">
+      <p>© 2026 Avezor · avezor.ua</p>
+      <p><span data-t="credits">Фото: Avezor та власники об’єктів; міські види з Wikimedia Commons:</span> <a href="https://commons.wikimedia.org/wiki/File:%D0%91%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA_%D0%B4%D0%B5%D1%80%D0%B6%D0%BF%D1%80%D0%BE%D0%BC%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D1%96_(%D0%94%D0%95%D0%A0%D0%96%D0%9F%D0%A0%D0%9E%D0%9C).jpg">«Будинок держпромисловості»</a>, Anna Leonenko, CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:2017_-_%D0%9A%D0%B8%D1%97%D0%B2_-_%D0%9C%D1%96%D1%81%D1%8F%D1%87%D0%BD%D0%B8%D0%B9_%D0%B2%D0%B5%D1%87%D1%96%D1%80_%D0%BD%D0%B0_%D0%97%D0%B0%D0%BC%D0%BA%D0%BE%D0%B2%D1%96%D0%B9_%D0%B3%D0%BE%D1%80%D1%96.jpg">«Місячний вечір на Замковій горі»</a>, Moahim, CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:Rynok_Square_in_Lviv_(8673813675).jpg">«Rynok Square in Lviv»</a>, Jorge Láscar, CC BY 2.0; <a href="https://commons.wikimedia.org/wiki/File:%D0%9D%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%9F%D0%BE%D0%B4%D0%BE%D0%BB_Podil_at_night_(49530393651).jpg">«Podil at night»</a>, spoilt.exile, CC BY-SA 2.0; <a href="https://commons.wikimedia.org/wiki/File:Sumska_Street,_Kharkiv_2021_-_02.jpg">«Sumska Street, Kharkiv»</a>, Serhii Bobok, CC BY 4.0; <a href="https://commons.wikimedia.org/wiki/File:Andriyivskyy_Descent_(8600676227).jpg">«Andriyivskyy Descent»</a>, Jorge Láscar, CC BY 2.0.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+
+const L = { uk: 0, ru: 1, en: 2 };
+const LOCALE = ['uk-UA', 'ru-RU', 'en-GB'];
+const T = {
+  'nav.buy': ['Купити', 'Купить', 'Buy'],
+  'nav.sell': ['Продати', 'Продать', 'Sell'],
+  'nav.rent': ['Оренда', 'Аренда', 'Rent'],
+  'nav.legal': ['Юридичні послуги', 'Юридические услуги', 'Legal services'],
+  'nav.about': ['Про компанію', 'О компании', 'About'],
+  'nav.blog': ['Блог', 'Блог', 'Blog'],
+  'nav.jobs': ['Вакансії', 'Вакансии', 'Careers'],
+  'nav.contacts': ['Контакти', 'Контакты', 'Contacts'],
+  'nav.cta': ['Консультація', 'Консультация', 'Get advice'],
+
+  'hero.h1': ['Безпечна купівля та продаж нерухомості', 'Безопасная покупка и продажа недвижимости', 'Safe real estate buying and selling'],
+  'hero.sub': [
+    'З юридичною гарантією Avezor: юрист перевіряє кожен об’єкт до угоди.',
+    'С юридической гарантией Avezor: юрист проверяет каждый объект до сделки.',
+    'With the Avezor legal guarantee: a lawyer checks every property before the deal.'],
+  'hero.cta': ['Переглянути', 'Смотреть', 'View'],
+  'hero.cta2': ['об’єкти', 'объекта', 'listings'],
+  'f.phone': ['Телефон', 'Телефон', 'Phone'],
+  'f.name': ['Ім’я', 'Имя', 'Name'],
+  'f.nameP': ['Олена', 'Елена', 'Olena'],
+  'f.cta2': ['Отримати добірку та консультацію', 'Получить подборку и консультацию', 'Get selection & consultation'],
+
+
+  'why.h': ['Чому вибирають Avezor', 'Почему выбирают Avezor', 'Why choose Avezor'],
+  'why.p': [
+    'Самостійний пошук або продаж нерухомості часто супроводжується ризиками: прихованими обтяженнями, юридичними пастками та втратою часу. Ми перетворюємо складний процес на просту та безпечну процедуру.',
+    'Самостоятельный поиск или продажа недвижимости часто сопряжены с рисками: скрытыми обременениями, юридическими ловушками и потерей времени. Мы превращаем сложный процесс в простую и безопасную процедуру.',
+    'Searching for or selling real estate on your own often involves hidden risks: encumbrances, legal traps and wasted time. We turn a complex process into a simple, secure procedure.'],
+  'w1.h': ['Юридична безпека', 'Юридическая безопасность', 'Legal security'],
+  'w1.p': [
+    'Наші юристи перевіряють історію власності, наявність арештів, боргів та правоустановчі документи ще до укладення угоди.',
+    'Наши юристы проверяют историю собственности, наличие арестов, долгов и правоустанавливающие документы ещё до заключения сделки.',
+    'Our attorneys verify ownership history, encumbrances, debts and legal titles before signing.'],
+  'w2.h': ['Актуальна база об’єктів', 'Актуальная база объектов', 'Verified listings database'],
+  'w2.p': [
+    'Стільки об’єктів на продаж у базі зараз. Працюємо тільки з перевіреними продавцями та забудовниками.',
+    'Столько объектов на продажу в базе сейчас. Работаем только с проверенными продавцами и застройщиками. Никаких «фейковых» объявлений.',
+    'Properties for sale in the database right now. We work exclusively with verified sellers and developers. Zero fake listings.'],
+  'w3.unit': ['год', 'часа', 'h'],
+  'w3.h': ['Економія вашого часу', 'Экономия вашего времени', 'Time savings'],
+  'w3.p': [
+    'Беремо на себе всі переговори, організацію переглядів та підготовку документів.',
+    'Берём на себя все переговоры, организацию просмотров и подготовку документов.',
+    'We handle all negotiations, property viewings and document preparation for you.'],
+  'w4.h': ['Вигідні умови', 'Выгодные условия', 'Favourable terms'],
+  'w4.p': [
+    'Допомагаємо узгодити найкращу ціну та умови розрахунку.',
+    'Помогаем согласовать лучшую цену и удобные условия расчёта.',
+    'We help negotiate the best price and payment structure for your deal.'],
+
+  'svc.h': ['Наші ключові послуги', 'Наши ключевые услуги', 'Our core services'],
+  'svc.all': ['Переглянути всі послуги', 'Посмотреть все услуги', 'View all services'],
+  's1.h': ['Купівля нерухомості', 'Покупка недвижимости', 'Buying real estate'],
+  's1.p': [
+    'Допомога у виборі квартири на первинному чи вторинному ринку, інвестиційні об’єкти з високою окупністю.',
+    'Подбор квартир на первичном и вторичном рынке, инвестиционные объекты с высокой окупаемостью.',
+    'Selection of primary and secondary market properties, plus high-yield investment options.'],
+  's2.h': ['Продаж нерухомості', 'Продажа недвижимости', 'Selling real estate'],
+  's2.p': [
+    'Професійна оцінка, ефективний маркетинг вашого об’єкта та швидкий вихід на угоду за максимальною ціною.',
+    'Профессиональная оценка, эффективный маркетинг вашего объекта и быстрый выход на сделку по максимальной цене.',
+    'Professional valuation, targeted marketing and quick closing at the maximum market price.'],
+  's3.h': ['Оренда нерухомості', 'Аренда недвижимости', 'Renting real estate'],
+  's3.p': [
+    'Підбір житлової та комерційної нерухомості для довгострокової оренди.',
+    'Подбор жилой и коммерческой недвижимости для долгосрочной аренды.',
+    'Curated selection of residential and commercial spaces for long-term lease.'],
+  's4.h': ['Юридичний супровід', 'Юридическое сопровождение', 'Legal support'],
+  's4.p': [
+    'Повний комплекс юридичних послуг — від перевірки документів до оформлення права власності у нотаріуса.',
+    'Полный комплекс юридических услуг — от проверки документов до оформления права собственности у нотариуса.',
+    'Comprehensive legal solutions, from property verification to title registration with a notary.'],
+  'ex.t': ['Витяг з Державного реєстру речових прав', 'Извлечение из Государственного реестра вещных прав', 'Extract from the State Register of Property Rights'],
+  'ex.s': ['Перевірка перед задатком', 'Проверка перед задатком', 'Checked before the deposit'],
+  'ex.1': ['Право власності', 'Право собственности', 'Ownership'],
+  'ex.2': ['Арешти', 'Аресты', 'Arrests'],
+  'ex.3': ['Іпотека', 'Ипотека', 'Mortgage'],
+  'ex.4': ['Заборона відчуження', 'Запрет отчуждения', 'Ban on disposal'],
+  'ex.ok': ['підтверджено', 'подтверждено', 'confirmed'],
+  'ex.no': ['не виявлено', 'не выявлено', 'none found'],
+  'ex.stamp': ['Перевірено Avezor', 'Проверено Avezor', 'Checked by Avezor'],
+
+  'nums.h': ['Avezor у цифрах', 'Avezor в цифрах', 'Avezor in numbers'],
+  'nums.q': [
+    '«Ми беремо відповідальність за юридичну чистоту кожної угоди, захищаючи ваші інтереси на кожному етапі.»',
+    '«Мы берём ответственность за юридическую чистоту каждой сделки, защищая ваши интересы на каждом этапе.»',
+    '“We take full responsibility for the legal purity of every transaction, protecting your interests at every step.”'],
+  'n1': ['років досвіду на ринку нерухомості та юридичних послуг', 'лет опыта на рынке недвижимости и юридических услуг', 'years of experience in real estate and legal services'],
+  'n2': ['успішно закритих угод', 'успешно закрытых сделок', 'successfully closed transactions'],
+  'n3': ['задоволених клієнтів, які рекомендують нас друзям', 'довольных клиентов, рекомендующих нас друзьям', 'satisfied clients who recommend us to friends'],
+
+  'how.h': ['4 простих кроки до угоди', '4 простых шага к сделке', '4 simple steps to a deal'],
+  'st1.h': ['Заявка та консультація', 'Заявка и консультация', 'Request & consultation'],
+  'st1.p': ['Ви залишаєте заявку, ми уточнюємо ваші критерії та бюджет.', 'Вы оставляете заявку, мы уточняем ваши критерии и бюджет.', 'Submit a request and we clarify your criteria, preferences and budget.'],
+  'st2.h': ['Підбір та перегляди', 'Подбор и просмотры', 'Selection & viewings'],
+  'st2.p': ['Формуємо персональну добірку та організовуємо зручний графік переглядів.', 'Формируем персональную подборку и организуем удобный график просмотров.', 'We curate a personal selection and arrange a viewing schedule.'],
+  'st3.h': ['Юридична перевірка', 'Юридическая проверка', 'Legal audit'],
+  'st3.p': ['Наші юристи проводять повний аудит об’єкта та документів.', 'Наши юристы проводят полный аудит объекта и документов.', 'Our legal experts conduct a thorough audit of the property and ownership records.'],
+  'st4.h': ['Угода та нотаріус', 'Сделка и нотариус', 'Closing & notary'],
+  'st4.p': ['Безпечне підписання договору та підтвердження права власності.', 'Безопасное подписание договора и подтверждение права собственности.', 'Secure signing of the agreement and official title transfer.'],
+
+  'ask.h': ['Часті запитання', 'Частые вопросы', 'Frequently asked questions'],
+  'ask.p': [
+    'Про вартість послуг, юридичну перевірку та купівлю в іпотеку. Не знайшли відповідь? Напишіть нам.',
+    'О стоимости услуг, юридической проверке и покупке в ипотеку. Не нашли ответ? Напишите нам.',
+    'On fees, the legal check and buying with a mortgage. No answer here? Message us.'],
+  'q1': ['Скільки коштують послуги агентства нерухомості Avezor?', 'Сколько стоят услуги агентства недвижимости Avezor?', 'How much do Avezor real estate agency services cost?'],
+  'a1': [
+    'Вартість залежить від типу угоди та обсягу послуг. Ми працюємо прозоро — фіксований відсоток або вартість послуги обговорюється до початку співпраці та фіксується у договорі.',
+    'Стоимость зависит от типа сделки и объёма услуг. Мы работаем прозрачно — фиксированный процент или стоимость услуги оговариваются до начала сотрудничества и фиксируются в договоре.',
+    'Fees depend on the deal structure and service scope. We operate with complete transparency: fixed rates or percentages are agreed before we start and stated in the contract.'],
+  'q2': ['Як відбувається юридична перевірка об’єкта?', 'Как происходит юридическая проверка объекта?', 'How is the legal verification of a property conducted?'],
+  'a2': [
+    'Наші профільні юристи аналізують реєстри речових прав, перевіряють відсутність судових спорів, арештів, застав, боргів та правомірність попередніх угод.',
+    'Наши профильные юристы анализируют реестры вещных прав, проверяют отсутствие судебных споров, арестов, залогов, долгов и правомерность предыдущих сделок.',
+    'Our legal team checks property registers, courts, tax and lien records, encumbrances and the legal validity of all prior transactions.'],
+  'q3': [
+    'Чи допомагаєте ви купувати нерухомість в іпотеку або за державними програмами (єОселя)?',
+    'Помогаете ли вы покупать недвижимость в ипотеку или по государственным программам (єОселя)?',
+    'Do you assist with mortgage purchases or state support programmes (eOselya)?'],
+  'a3': [
+    'Так, ми супроводжуємо угоди з залученням кредитних коштів та державних програм, підготовлюємо необхідний пакет документів для банків.',
+    'Да, мы сопровождаем сделки с привлечением кредитных средств и государственных программ, подготавливая необходимый пакет документов для банков.',
+    'Yes, we guide transactions involving mortgage loans and government financing schemes and prepare the complete package of documents for banks.'],
+
+  'close.h': ['Готові зробити перший крок?', 'Готовы сделать первый шаг?', 'Ready to take the first step?'],
+  'close.p': [
+    'Залиште заявку зараз і отримайте безкоштовну консультацію юриста та добірку з 5 найкращих об’єктів за вашими критеріями вже сьогодні.',
+    'Оставьте заявку сейчас и получите бесплатную консультацию юриста и подборку из 5 лучших объектов по вашим критериям уже сегодня.',
+    'Leave a request now to receive a free legal consultation and a curated selection of 5 top properties tailored to your criteria today.'],
+
+  'm.acc': ['Увійти або зареєструватися', 'Войти или зарегистрироваться', 'Sign in or register'],
+  'm.accSub': ['Зберігайте об’єкти, добірки та пошуки', 'Сохраняйте объекты, подборки и поиски', 'Save listings, collections and searches'],
+  'm.add': ['Додати об’єкт', 'Добавить объект', 'Add a property'],
+  'm.re': ['Нерухомість', 'Недвижимость', 'Real estate'],
+  'm.re1': ['Купівля', 'Покупка', 'Buy'],
+  'm.re2': ['Оренда', 'Аренда', 'Rent'],
+  'm.re3': ['Комерційна нерухомість', 'Коммерческая недвижимость', 'Commercial property'],
+  'm.sv': ['Послуги', 'Услуги', 'Services'],
+  'm.sv1': ['Юридичний супровід', 'Юридическое сопровождение', 'Legal support'],
+  'm.sv2': ['Продаж вашого об’єкта', 'Продажа вашего объекта', 'Selling your property'],
+  'm.sv3': ['Усі послуги', 'Все услуги', 'All services'],
+  'm.co': ['Компанія', 'Компания', 'Company'],
+  'm.co1': ['Про нас', 'О нас', 'About us'],
+  'm.co2': ['Блог', 'Блог', 'Blog'],
+  'm.co3': ['Контакти', 'Контакты', 'Contacts'],
+  'm.co4': ['Вакансії', 'Вакансии', 'Careers'],
+  'm.country': ['Україна · avezor.ua', 'Украина · avezor.ua', 'Ukraine · avezor.ua'],
+  'm.write': ['Написати', 'Написать', 'Text us'],
+  'm.call': ['Подзвонити', 'Позвонить', 'Call us'],
+  'm.search': ['Пошук', 'Поиск', 'Search'],
+  'm.fav': ['Обране', 'Избранное', 'Favourites'],
+  'm.menu': ['Меню', 'Меню', 'Menu'],
+
+  'credits': ['Фото: Avezor та власники об’єктів; міські види з Wikimedia Commons:', 'Фото: Avezor и владельцы объектов; городские виды с Wikimedia Commons:', 'Photos: Avezor and property owners; city views via Wikimedia Commons:'],
+
+  'alt.h1': ['Держпром на майдані Свободи в Харкові у вечірньому світлі', 'Госпром на площади Свободы в Харькове в вечернем свете', 'Derzhprom on Freedom Square, Kharkiv, in evening light'],
+  'alt.h2': ['Андріївська церква та будинки Андріївського узвозу в Києві ввечері', 'Андреевская церковь и дома Андреевского спуска в Киеве вечером', 'St Andrew’s Church and the houses of Andriivskyi Descent, Kyiv, at night'],
+  'alt.h3': ['Кам’яниці на площі Ринок у Львові', 'Каменицы на площади Рынок во Львове', 'Townhouses on Rynok Square, Lviv'],
+  'alt.h4': ['Нічний Поділ і Дніпро в Києві', 'Ночной Подол и Днепр в Киеве', 'Podil and the Dnipro at night, Kyiv'],
+  'alt.w1': ['Новий житловий комплекс у Львові з бірюзовими дахами біля Високого Замку', 'Новый жилой комплекс во Львове с бирюзовыми крышами у Высокого Замка', 'A new residential complex in Lviv with turquoise roofs below the High Castle'],
+  'alt.w4': ['Кухня-вітальня з ремонтом у новобудові у Львові', 'Кухня-гостиная с ремонтом в новостройке во Львове', 'A renovated kitchen-living room in a new build in Lviv'],
+  'alt.s1': ['Новий житловий будинок у Шевченківському районі Львова', 'Новый жилой дом в Шевченковском районе Львова', 'A new apartment building in Shevchenkivskyi district, Lviv'],
+  'alt.s2': ['Дуплекс на вулиці Долинній у Львові', 'Дуплекс на улице Долинной во Львове', 'A duplex on Dolynna Street, Lviv'],
+  'alt.s3': ['Вітальня двокімнатної квартири в оренду в Галицькому районі Львова', 'Гостиная двухкомнатной квартиры в аренду в Галицком районе Львова', 'The living room of a two-room flat for rent in Halytskyi district, Lviv'],
+  'alt.n': ['Вид на Київський район Харкова з вікна новобудови', 'Вид на Киевский район Харькова из окна новостройки', 'Kharkiv’s Kyivskyi district seen from a new-build window'],
+  'alt.st1': ['Вулиця Сумська в Харкові взимку', 'Улица Сумская в Харькове зимой', 'Sumska Street, Kharkiv, in winter'],
+  'alt.st2': ['Світла вітальня квартири з дизайнерським ремонтом у Львові', 'Светлая гостиная квартиры с дизайнерским ремонтом во Львове', 'A bright, designer-renovated living room in Lviv'],
+  'alt.st3': ['План квартири з технічного паспорта, одна кімната виділена для звірки', 'План квартиры из технического паспорта, одна комната выделена для сверки', 'A floor plan from a technical passport with one room marked for checking'],
+  'alt.st4': ['Вітальня з панорамним вікном у новобудові в Харкові', 'Гостиная с панорамным окном в новостройке в Харькове', 'A living room with a full-height window in a Kharkiv new build'],
+  'alt.c': ['Простора вітальня-їдальня трикімнатної квартири у Львові', 'Просторная гостиная-столовая трёхкомнатной квартиры во Львове', 'A spacious living-dining room in a three-room flat, Lviv'],
+  'alt.f': ['Будинки Андріївського узвозу в Києві влітку', 'Дома Андреевского спуска в Киеве летом', 'Houses on Andriivskyi Descent, Kyiv, in summer']
+};
+
+/* Real counts from api-ukraine.donmajor.com, 2026-10-21. Selling compares with listings for sale. */
+const COUNTS = {
+  buy: { apartment: 8594, house: 1583, commercial: 815 },
+  rent: { apartment: 275, house: 72, commercial: 912 }
+};
+const NOUNS = {
+  uk: {
+    apartment: { one: 'квартира', few: 'квартири', many: 'квартир', other: 'квартири' },
+    house: { one: 'будинок', few: 'будинки', many: 'будинків', other: 'будинку' },
+    commercial: { one: 'комерційний об’єкт', few: 'комерційні об’єкти', many: 'комерційних об’єктів', other: 'комерційного об’єкта' }
+  },
+  ru: {
+    apartment: { one: 'квартира', few: 'квартиры', many: 'квартир', other: 'квартиры' },
+    house: { one: 'дом', few: 'дома', many: 'домов', other: 'дома' },
+    commercial: { one: 'коммерческий объект', few: 'коммерческих объекта', many: 'коммерческих объектов', other: 'коммерческого объекта' }
+  },
+  en: {
+    apartment: { one: 'apartment', other: 'apartments' },
+    house: { one: 'house', other: 'houses' },
+    commercial: { one: 'commercial property', other: 'commercial properties' }
+  }
+};
+const LIVE = {
+  buy: ['{n} {noun} на продаж зараз у базі Avezor. Юрист перевірить об’єкт, який оберете.', '{n} {noun} на продажу сейчас в базе Avezor. Юрист проверит объект, который вы выберете.', '{n} {noun} for sale in the Avezor database right now. A lawyer checks the one you choose.'],
+  rent: ['{n} {noun} в оренду зараз у базі Avezor. Договір оренди перевірить юрист.', '{n} {noun} в аренду сейчас в базе Avezor. Договор аренды проверит юрист.', '{n} {noun} for rent in the Avezor database right now. A lawyer checks the lease.'],
+  sell: ['Порівняємо ваш об’єкт з {n} схожими оголошеннями на продаж і назвемо ринкову ціну.', 'Сравним ваш объект с {n} похожими объявлениями о продаже и назовём рыночную цену.', 'We compare your property with {n} similar listings for sale to name a market price.']
+};
+
+let lang = 'uk', hIdx = 0;
+const $ = s => document.querySelector(s);
+const loc = () => LOCALE[L[lang]];
+const nf = () => new Intl.NumberFormat(loc());
+const t = k => (T[k] ? T[k][L[lang]] : null);
+
+function apply(next) {
+  lang = next;
+  document.documentElement.lang = lang;
+  document.title = {
+    uk: 'Avezor — Агентство нерухомості та юридичний супровід в Україні | Купівля, продаж, оренда',
+    ru: 'Avezor — Агентство недвижимости и юридическое сопровождение в Киеве и Украине | Покупка, продажа, аренда',
+    en: 'Avezor — Real Estate Agency & Legal Support in Ukraine | Buy, Sell, Rent'
+  }[lang];
+  document.querySelectorAll('[data-t]').forEach(el => { const v = t(el.dataset.t); if (v != null) el.textContent = v; });
+  document.querySelectorAll('[data-ta]').forEach(el => { const v = t(el.dataset.ta); if (v != null) el.alt = v; });
+  document.querySelectorAll('[data-tl]').forEach(el => { const v = t(el.dataset.tl); if (v != null) el.setAttribute('aria-label', v); });
+  document.querySelectorAll('[data-tp]').forEach(el => { const v = t(el.dataset.tp); if (v != null) el.placeholder = v; });
+  document.querySelectorAll('[data-n]').forEach(el => { el.textContent = nf().format(+el.dataset.n) + (el.hasAttribute('data-plus') ? '+' : ''); });
+  document.querySelectorAll('.langs button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  setPlace(hIdx);
+  counters.forEach(renderCount);
+  try { localStorage.setItem('avezor-ua-lang', lang); } catch (e) {}
+}
+
+/* No CRM in a mockup: the form opens an email with the visitor's choices filled in. */
+document.querySelectorAll('[data-lead]').forEach(form => form.addEventListener('submit', e => {
+  e.preventDefault();
+  const d = new FormData(form);
+  const lines = [];
+  if (d.get('name')) lines.push(d.get('name'));
+  lines.push(d.get('phone'));
+  location.href = 'mailto:an.avezor@gmail.com?subject=' + encodeURIComponent('Avezor: ' + t('nav.cta')) + '&body=' + encodeURIComponent(lines.join('\n'));
+}));
+
+/* Hero: four cities crossfade; the caption names the one on screen. */
+const heroImgs = [...document.querySelectorAll('[data-hero] img')];
+const PLACES = [
+  ['Харків · Держпром', 'Харьков · Госпром', 'Kharkiv · Derzhprom'],
+  ['Київ · Андріївський узвіз', 'Киев · Андреевский спуск', 'Kyiv · Andriivskyi Descent'],
+  ['Львів · площа Ринок', 'Львов · площадь Рынок', 'Lviv · Rynok Square'],
+  ['Київ · Поділ', 'Киев · Подол', 'Kyiv · Podil']
+];
+const placeEl = $('[data-place]');
+function setPlace(i) { placeEl.textContent = PLACES[i][L[lang]]; }
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!still) {
+  setInterval(() => {
+    if (document.hidden) return;
+    heroImgs[hIdx].classList.remove('is-on');
+    hIdx = (hIdx + 1) % heroImgs.length;
+    heroImgs[hIdx].classList.add('is-on');
+    setPlace(hIdx);
+  }, 6500);
+}
+
+/* Figures count up from zero the first time they scroll into view. The HTML holds the final
+   values, so without script or with reduced motion the page shows them as they are. */
+const counters = [...document.querySelectorAll('[data-count]')];
+counters.forEach(el => { el._v = +el.dataset.count; });
+function renderCount(el) { el.textContent = nf().format(Math.round(el._v)) + (el.dataset.suffix || ''); }
+if (!still) {
+  counters.forEach(el => { el._v = 0; });
+  const ease = x => (x === 1 ? 1 : 1 - Math.pow(2, -10 * x));
+  const countIo = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    countIo.unobserve(e.target);
+    const el = e.target, to = +el.dataset.count, t0 = performance.now(), dur = to > 1000 ? 2200 : 1600;
+    const step = now => {
+      const p = Math.min(1, (now - t0) / dur);
+      el._v = to * ease(p);
+      renderCount(el);
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }), { threshold: 0.6 });
+  counters.forEach(el => countIo.observe(el));
+}
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+document.querySelectorAll('.langs button').forEach(b => b.addEventListener('click', () => apply(b.dataset.lang)));
+
+/* Phone header: see-through over the hero, white once the hero has scrolled past it. */
+const mbar = $('[data-mbar]');
+new IntersectionObserver(([e]) => mbar.classList.toggle('is-solid', !e.isIntersecting), { rootMargin: '-64px 0px 0px 0px' })
+  .observe($('.hero'));
+
+/* Burger: full-screen panel from the right under the header, as in the app. */
+const burger = $('[data-burger]');
+const mmenu = $('[data-mmenu]');
+function setMenu(open) {
+  burger.setAttribute('aria-expanded', String(open));
+  mmenu.classList.toggle('is-open', open);
+  mmenu.setAttribute('aria-hidden', String(!open));
+  mmenu.inert = !open;
+  document.body.classList.toggle('menu-open', open);
+}
+burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+matchMedia('(min-width: 801px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+let start = new URLSearchParams(location.search).get('lang');
+if (!L.hasOwnProperty(start)) { try { start = localStorage.getItem('avezor-ua-lang'); } catch (e) {} }
+apply(L.hasOwnProperty(start) ? start : 'uk');
+</script>
+</body>
+</html>
