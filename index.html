@@ -144,7 +144,9 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 .tile--red { background: var(--accent); color: #fff; grid-row: span 2; }
 .tile--blush { background: var(--blush); }
 .tile--blush .tile__big { color: var(--accent); }
-.tile--deep { background: var(--deep); color: #fff; }
+/* Translucent graphite rather than black: the solid #1b1b1b block read as heavy next to the blush. */
+.tile--deep { background: rgba(36,38,42,.78); color: #fff; }
+.tile__unit { font-size: .46em; letter-spacing: -.02em; }
 .tile--grey { background: var(--surface); grid-column: span 2; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: stretch; }
 /* Heading and line travel together at the foot, a price-tag mark holds the top:
    the same top-mark / bottom-text rhythm as the number tiles beside it. */
@@ -154,7 +156,7 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 .tile__mark svg { width: 28px; height: 28px; }
 .tile__pic { border-radius: var(--r-m); overflow: hidden; }
 .tile__pic img { width: 100%; height: 100%; object-fit: cover; }
-/* The red tile spans both rows, so its photo sets the height of the "Вигідні умови" row. */
+/* The red tile spans both rows, so its photo sets the height of the "Чесність та прозорість" row. */
 .tile--red .tile__pic { aspect-ratio: 16 / 10; }
 /* Out of flow, so the portrait photo fills the row instead of stretching it. */
 .tile--grey .tile__pic { min-height: 240px; position: relative; }
@@ -163,29 +165,15 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 /* ---------- Services: v3 district grid, one tile per service ---------- */
 .svc { padding-top: var(--section); }
 .svc__head { grid-column: 1 / 13; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: end; gap: 32px; }
-.svc__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 330px 330px; gap: 16px; }
+.svc__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: 520px; gap: 16px; }
 .svc__tile { position: relative; border-radius: var(--r-l); overflow: hidden; color: #fff; text-decoration: none; display: block; }
 .svc__tile > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
 .svc__tile:hover > img { transform: scale(1.05); }
-.svc__grid .svc__tile:first-child { grid-row: span 2; }
 .svc__label { position: absolute; left: 16px; right: 16px; bottom: 16px; display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: start; background: #fff; color: var(--ink); border-radius: var(--r-m); padding: 16px 18px; }
 .svc__label b { font-family: var(--display); font-size: var(--t-m); font-weight: 600; letter-spacing: -.015em; line-height: 1.1; }
 .svc__label span { grid-column: 1; color: var(--muted); font-size: 16px; line-height: 1.4; font-weight: 500; }
 .svc__label .arrow { grid-column: 2; grid-row: 1; width: 22px; height: 22px; margin-top: 4px; }
 .svc__tile:hover .svc__label .arrow { transform: translateX(4px); }
-.svc__tile--legal { grid-column: span 2; background: var(--deep); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 32px; align-items: end; }
-.svc__tile--legal .svc__label { position: static; background: none; color: #fff; padding: 0; }
-.svc__tile--legal .svc__label span { color: #d6d6d6; }
-
-/* A drawn registry extract: the thing the legal check produces. */
-.extract { align-self: stretch; background: #fff; color: var(--ink); border-radius: var(--r-m); padding: 20px 22px 30px; position: relative; display: flex; flex-direction: column; gap: 6px; transform: rotate(-1.5deg); transition: transform .5s var(--ease); }
-.svc__tile--legal:hover .extract { transform: rotate(0); }
-.extract__t { font-family: var(--display); font-weight: 600; font-size: 16px; line-height: 1.2; }
-.extract__s { font-size: var(--t-s); color: var(--muted); font-weight: 600; margin-bottom: 4px; }
-.extract__row { display: flex; justify-content: space-between; gap: 12px; font-size: var(--t-s); font-weight: 600; padding: 5px 10px; border-radius: 10px; background: var(--surface); }
-.extract__row i { font-style: normal; color: var(--muted); white-space: nowrap; }
-.extract__row--ok i { color: var(--accent); font-weight: 600; }
-.stamp { position: absolute; right: 18px; bottom: -22px; border-radius: var(--pill); background: var(--accent); color: #fff; padding: 10px 18px; font-family: var(--display); font-weight: 600; font-size: var(--t-s); white-space: nowrap; transform: rotate(-6deg); }
 
 /* ---------- Numbers ---------- */
 .nums { padding-top: var(--section); }
@@ -201,21 +189,22 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 .nums__pic { border-radius: var(--r-m); overflow: hidden; height: 280px; }
 .nums__pic img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ---------- How it works: a dark field, four steps going down ---------- */
+/* ---------- How it works: a dark field, five steps going down ---------- */
 .how { margin-top: var(--section); background: var(--deep); color: #fff; border-radius: var(--r-l); margin-left: 16px; margin-right: 16px; padding: 120px calc(var(--m) - 16px + 24px) 120px; }
 .how__head { grid-column: 1 / 13; margin-bottom: 64px; }
 .how__head .h2 { max-width: 14em; }
-.how__steps { grid-column: 1 / 13; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); align-items: start; }
-.how__step:nth-child(2) { margin-top: 80px; }
-.how__step:nth-child(3) { margin-top: 160px; }
-.how__step:nth-child(4) { margin-top: 240px; }
+.how__steps { grid-column: 1 / 13; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--gap); align-items: start; }
+.how__step:nth-child(2) { margin-top: 60px; }
+.how__step:nth-child(3) { margin-top: 120px; }
+.how__step:nth-child(4) { margin-top: 180px; }
+.how__step:nth-child(5) { margin-top: 240px; }
 .how__step figure { margin: 0 0 20px; border-radius: var(--r-m); overflow: hidden; background: #2b2b2b; aspect-ratio: 4 / 5; }
 .how__step img, .how__step svg { width: 100%; height: 100%; object-fit: cover; display: block; }
 .how__step p { color: #e6e6e6; }
 .how__step strong { display: block; color: #fff; font-family: var(--display); font-size: var(--t-m); font-weight: 600; letter-spacing: -.01em; line-height: 1.2; margin-bottom: 8px; }
 
 /* Steps 1-3 follow the same rule as step 4 below: the resting frame is the finished one. */
-.scene [class^="s1-"], .scene [class^="s2-"], .scene [class^="s3-"] { transform-box: fill-box; transform-origin: center; }
+.scene [class^="s1-"], .scene [class^="s2-"], .scene [class^="s3-"], .scene [class^="s5-"] { transform-box: fill-box; transform-origin: center; }
 @keyframes sc-pop { from { opacity: 0; transform: translateY(10px) scale(.85); } to { opacity: 1; transform: none; } }
 @keyframes sc-badge { from { opacity: 0; transform: scale(0); } 70% { transform: scale(1.15); } to { opacity: 1; transform: none; } }
 /* Chat: question, typing, answer, the criteria as quick replies, the request confirmed. */
@@ -253,6 +242,16 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
   100% { transform: none; }
 }
 @keyframes s3-room { from { fill-opacity: 0; stroke-opacity: 0; stroke-dashoffset: 96; } 25% { stroke-opacity: 1; } to { fill-opacity: .22; stroke-dashoffset: 0; } }
+/* Negotiation: both opening prices get struck out, the agreed one lands, the terms tick off. */
+.scene5 .s5-strike { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.scene5.is-play .s5-offer1 { animation: sc-pop .4s var(--ease) .2s backwards; }
+.scene5.is-play .s5-offer2 { animation: sc-pop .4s var(--ease) .45s backwards; }
+.scene5.is-play .s5-strike1 { animation: s4-sign .35s ease-out .95s backwards; }
+.scene5.is-play .s5-strike2 { animation: s4-sign .35s ease-out 1.15s backwards; }
+.scene5.is-play .s5-deal { animation: sc-pop .5s var(--ease) 1.5s backwards; }
+.scene5.is-play .s5-tick1 { animation: sc-badge .35s var(--ease) 2s backwards; }
+.scene5.is-play .s5-tick2 { animation: sc-badge .35s var(--ease) 2.2s backwards; }
+.scene5.is-play .s5-tick3 { animation: sc-badge .35s var(--ease) 2.4s backwards; }
 
 /* Step 4 scene. At rest it shows the finished deal; .is-play rewinds and replays it:
    signature, stamp (the paper takes the hit), keys. `backwards` holds each part in its
@@ -358,9 +357,7 @@ details p { margin-top: 12px; max-width: 60ch; }
   .bento { grid-template-columns: 1fr 1fr; }
   .tile--red { grid-row: auto; grid-column: span 2; }
   .svc__head { flex-direction: column; align-items: start; }
-  .svc__grid { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 330px; }
-  .svc__grid .svc__tile:first-child { grid-row: auto; grid-column: span 2; }
-  .svc__tile--legal { grid-auto-rows: auto; }
+  .svc__grid { grid-template-rows: 440px; }
   .nums__panel { grid-template-columns: repeat(3, 1fr); }
   .nums__pic { grid-column: 1 / -1; }
   .how__steps { grid-template-columns: 1fr 1fr; }
@@ -456,14 +453,9 @@ details p { margin-top: 12px; max-width: 60ch; }
   .tile__big { font-size: 64px; }
   .tile__big--word, .tile h3.tile__big--word { font-size: var(--t-l); }
 
-  .svc__grid { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 12px; }
-  .svc__grid .svc__tile:first-child { grid-column: auto; }
+  .svc__grid { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: auto; gap: 12px; }
   .svc__tile { min-height: 360px; border-radius: var(--r-m); }
   .svc__label { left: 10px; right: 10px; bottom: 10px; padding: 14px; border-radius: 16px; }
-  
-  .svc__tile--legal { grid-column: auto; grid-template-columns: 1fr; padding: 24px; min-height: 0; }
-  .extract { transform: none; margin-bottom: 36px; }
-  .stamp { right: 12px; }
 
   .nums__head blockquote { font-size: 22px; }
   .nums__panel { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
@@ -586,7 +578,7 @@ details p { margin-top: 12px; max-width: 60ch; }
 
   <div class="hero__body">
     <h1 class="rv" data-t="hero.h1">Безпечна купівля та продаж нерухомості</h1>
-    <p class="hero__sub lead rv" style="--d:90ms" data-t="hero.sub">З юридичною гарантією Avezor: юрист перевіряє кожен об’єкт до угоди.</p>
+    <p class="hero__sub lead rv" style="--d:90ms" data-t="hero.sub">Юридичний супровід на кожному етапі: від запиту до угоди.</p>
     <a class="cta rv" style="--d:180ms" href="https://avezor.ua/buy"><span><span data-t="hero.cta">Переглянути</span> <b data-n="12453">12 453</b> <span data-t="hero.cta2">об’єкти</span></span><span class="cta__ic" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
   </div>
   <p class="hero__place" aria-hidden="true" data-place>Харків · Держпром</p>
@@ -602,26 +594,26 @@ details p { margin-top: 12px; max-width: 60ch; }
   <div class="bento">
     <div class="tile tile--red rv">
       <div>
-        <div class="tile__big" data-count="100" data-suffix="%">100%</div>
-        <h3 style="margin-top:20px" data-t="w1.h">Юридична безпека</h3>
-        <p data-t="w1.p">Наші юристи перевіряють історію власності, наявність арештів, боргів та правоустановчі документи ще до укладення угоди.</p>
+        <div class="tile__big">24/7</div>
+        <h3 style="margin-top:20px" data-t="w1.h">Юридичний супровід</h3>
+        <p data-t="w1.p">Наші юристи проводять перемовини, перевіряють історію власності, правовстановлюючі документи, наявність заборон та інших обтяжень.</p>
       </div>
       <div class="tile__pic"><img src="assets/listings/BU46150427-0.jpg" width="825" height="464" alt="Новий житловий комплекс у Львові з бірюзовими дахами біля Високого Замку" data-ta="alt.w1"></div>
     </div>
     <div class="tile tile--blush rv" style="--d:80ms">
       <div class="tile__big" data-count="12453">12 453</div>
-      <div><h3 data-t="w2.h">Актуальна база об’єктів</h3><p data-t="w2.p">Стільки об’єктів на продаж у базі зараз. Працюємо тільки з перевіреними продавцями та забудовниками.</p></div>
+      <div><h3 data-t="w2.h">Кількість пропозицій на сьогодні</h3><p data-t="w2.p">Співпрацюємо з тими, кому довіряємо: надійні забудовники та відповідальні власники.</p></div>
     </div>
     <div class="tile tile--deep rv" style="--d:160ms">
-      <div class="tile__big"><span data-count="24">24</span> <span data-t="w3.unit">год</span></div>
-      <div><h3 data-t="w3.h">Економія вашого часу</h3><p data-t="w3.p">Беремо на себе всі переговори, організацію переглядів та підготовку документів.</p></div>
+      <div class="tile__big"><span data-count="24">24</span> <span class="tile__unit" data-t="w3.unit">на 100%</span></div>
+      <div><h3 data-t="w3.h">Економія вашого часу</h3><p data-t="w3.p">Беремо на себе перемовини, організацію переглядів та супровід підготовки документів.</p></div>
     </div>
     <div class="tile tile--grey rv" style="--d:240ms">
       <div>
         <span class="tile__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12.6V4.5A1.5 1.5 0 0 1 4.5 3h8.1a1.5 1.5 0 0 1 1.06.44l6.9 6.9a1.5 1.5 0 0 1 0 2.12l-8.1 8.1a1.5 1.5 0 0 1-2.12 0l-6.9-6.9A1.5 1.5 0 0 1 3 12.6Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="8" cy="8" r="1.6" fill="currentColor"/></svg></span>
         <div class="tile__copy">
-          <h3 class="tile__big tile__big--word" data-t="w4.h">Вигідні умови</h3>
-          <p data-t="w4.p">Допомагаємо узгодити найкращу ціну та умови розрахунку.</p>
+          <h3 class="tile__big tile__big--word" data-t="w4.h">Чесність та прозорість</h3>
+          <p data-t="w4.p">Заздалегідь обговорені умови співпраці, комісія після укладення угоди. Допомагаємо узгодити найкращу ціну та умови розрахунку.</p>
         </div>
       </div>
       <div class="tile__pic"><img src="assets/listings/BU50959470-0.jpg" width="544" height="682" alt="Кухня-вітальня з ремонтом у новобудові у Львові" data-ta="alt.w4"></div>
@@ -638,35 +630,23 @@ details p { margin-top: 12px; max-width: 60ch; }
   </div>
   <div class="svc__grid">
     <a class="svc__tile rv" href="https://avezor.ua/"><img src="assets/listings/BU35600005-0.jpg" width="1000" height="750" alt="Новий житловий будинок у Шевченківському районі Львова" data-ta="alt.s1">
-      <span class="svc__label"><b data-t="s1.h">Купівля нерухомості</b><span data-t="s1.p">Допомога у виборі квартири на первинному чи вторинному ринку, інвестиційні об’єкти з високою окупністю.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <span class="svc__label"><b data-t="s1.h">Купівля нерухомості</b><span data-t="s1.p">Допомога у виборі будь-якого об’єкта нерухомості на первинному та вторинному ринку. Вигідні інвестиції в нерухомість.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     <a class="svc__tile rv" style="--d:80ms" href="https://avezor.ua/dodajte-svij-obyekt"><img src="assets/listings/BU14824633-0.jpg" width="1000" height="955" alt="Дуплекс на вулиці Долинній у Львові" data-ta="alt.s2">
-      <span class="svc__label"><b data-t="s2.h">Продаж нерухомості</b><span data-t="s2.p">Професійна оцінка, ефективний маркетинг вашого об’єкта та швидкий вихід на угоду за максимальною ціною.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <span class="svc__label"><b data-t="s2.h">Продаж нерухомості</b><span data-t="s2.p">Визначення ринкової вартості та звіт оцінювача, ефективний маркетинг об’єкта та легкий вихід на угоду.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     <a class="svc__tile rv" style="--d:160ms" href="https://avezor.ua/"><img src="assets/listings/RE55273134-0.jpg" width="1000" height="750" alt="Вітальня двокімнатної квартири в оренду в Галицькому районі Львова" data-ta="alt.s3">
-      <span class="svc__label"><b data-t="s3.h">Оренда нерухомості</b><span data-t="s3.p">Підбір житлової та комерційної нерухомості для довгострокової оренди.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-    <a class="svc__tile svc__tile--legal rv" style="--d:240ms" href="https://avezor.ua/">
-      <span class="svc__label"><b data-t="s4.h">Юридичний супровід</b><span data-t="s4.p">Повний комплекс юридичних послуг — від перевірки документів до оформлення права власності у нотаріуса.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="extract" aria-hidden="true">
-        <span class="extract__t" data-t="ex.t">Витяг з Державного реєстру речових прав</span>
-        <span class="extract__s" data-t="ex.s">Перевірка перед задатком</span>
-        <span class="extract__row extract__row--ok"><span data-t="ex.1">Право власності</span><i data-t="ex.ok">підтверджено</i></span>
-        <span class="extract__row extract__row--ok"><span data-t="ex.2">Арешти</span><i data-t="ex.no">не виявлено</i></span>
-        <span class="extract__row extract__row--ok"><span data-t="ex.3">Іпотека</span><i data-t="ex.no">не виявлено</i></span>
-        <span class="extract__row extract__row--ok"><span data-t="ex.4">Заборона відчуження</span><i data-t="ex.no">не виявлено</i></span>
-        <span class="stamp" data-t="ex.stamp">Перевірено Avezor</span>
-      </span>
-    </a>
+      <span class="svc__label"><b data-t="s3.h">Оренда нерухомості</b><span data-t="s3.p">Довгострокова та подобова оренда житлової та комерційної нерухомості.</span><svg class="arrow" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h13M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
   </div>
 </section>
 
 <section class="nums wrap grid" id="numbers" aria-labelledby="nums-h">
   <div class="nums__head">
     <h2 id="nums-h" class="h2 rv" data-t="nums.h">Avezor у цифрах</h2>
-    <blockquote class="rv" style="--d:80ms" data-t="nums.q">«Ми беремо відповідальність за юридичну чистоту кожної угоди, захищаючи ваші інтереси на кожному етапі.»</blockquote>
+    <blockquote class="rv" style="--d:80ms" data-t="nums.q">Юридичний супровід та захист ваших інтересів</blockquote>
   </div>
   <div class="nums__panel rv" style="--d:120ms">
-    <div class="num"><div class="num__n" data-count="10" data-suffix="+">10+</div><p data-t="n1">років досвіду на ринку нерухомості та юридичних послуг</p></div>
+    <div class="num"><div class="num__n" data-count="20" data-suffix="+">20+</div><p data-t="n1">років досвіду на ринку нерухомості та юридичних послуг</p></div>
     <div class="num"><div class="num__n" data-count="5000" data-suffix="+">5 000+</div><p data-t="n2">успішно закритих угод</p></div>
-    <div class="num"><div class="num__n" data-count="98" data-suffix="%">98%</div><p data-t="n3">задоволених клієнтів, які рекомендують нас друзям</p></div>
+    <div class="num"><div class="num__n">∞</div><p data-t="n3">Більшість нових запитів ми отримуємо за рекомендаціями наших клієнтів</p></div>
     <div class="nums__pic"><img src="assets/listings/BU93386127-0.jpg" width="979" height="1000" alt="Вид на Київський район Харкова з вікна новобудови" data-ta="alt.n"></div>
   </div>
 </section>
@@ -675,7 +655,7 @@ details p { margin-top: 12px; max-width: 60ch; }
   <svg class="waves" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path class="waves__l" style="--i:0" fill="#212121" d="M-160,161 C0,161 0,169 160,169 C340,169 340,120 520,120 C700,120 700,134 880,134 C1060,134 1060,156 1240,156 C1420,156 1420,163 1600,163 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:1" fill="#2d2d2d" d="M-160,239 C0,239 0,327 160,327 C340,327 340,295 520,295 C700,295 700,275 880,275 C1060,275 1060,261 1240,261 C1420,261 1420,316 1600,316 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:2" fill="#2d2d2d" d="M-160,425 C0,425 0,361 160,361 C340,361 340,408 520,408 C700,408 700,379 880,379 C1060,379 1060,427 1240,427 C1420,427 1420,370 1600,370 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:3" fill="#3f3f3f" d="M-160,538 C0,538 0,530 160,530 C340,530 340,495 520,495 C700,495 700,482 880,482 C1060,482 1060,579 1240,579 C1420,579 1420,583 1600,583 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:4" fill="#393939" d="M-160,612 C0,612 0,648 160,648 C340,648 340,704 520,704 C700,704 700,620 880,620 C1060,620 1060,645 1240,645 C1420,645 1420,660 1600,660 L1600,900 L-160,900 Z"/><path class="waves__l" style="--i:5" fill="#3f3f3f" d="M-160,796 C0,796 0,753 160,753 C340,753 340,741 520,741 C700,741 700,830 880,830 C1060,830 1060,771 1240,771 C1420,771 1420,748 1600,748 L1600,900 L-160,900 Z"/></svg>
   <div class="grid">
     <div class="how__head">
-      <h2 id="how-h" class="h2 rv" data-t="how.h">4 простих кроки до угоди</h2>
+      <h2 id="how-h" class="h2 rv" data-t="how.h">5 простих кроків до угоди</h2>
     </div>
     <ol class="how__steps">
       <li class="how__step rv">
@@ -725,7 +705,7 @@ details p { margin-top: 12px; max-width: 60ch; }
             </g>
           </svg>
         </figure>
-        <p><strong data-t="st1.h">Заявка та консультація</strong><span data-t="st1.p">Ви залишаєте заявку, ми уточнюємо ваші критерії та бюджет.</span></p>
+        <p><strong data-t="st1.h">Заявка та консультація</strong><span data-t="st1.p">Ви залишаєте заявку або телефонуєте нам. Персональний експерт Avezor зв’язується з вами, щоб детально обговорити ваші цілі, побажання та деталі майбутньої угоди.</span></p>
       </li>
       <li class="how__step rv" style="--d:100ms">
         <figure>
@@ -771,7 +751,7 @@ details p { margin-top: 12px; max-width: 60ch; }
             </g>
           </svg>
         </figure>
-        <p><strong data-t="st2.h">Підбір та перегляди</strong><span data-t="st2.p">Формуємо персональну добірку та організовуємо зручний графік переглядів.</span></p>
+        <p><strong data-t="st2.h">Аналіз ринку та підбір</strong><span data-t="st2.p">Здійснюємо оцінку об’єкта або формуємо добірку найкращих варіантів за вашими критеріями, організовуємо перегляди та проводимо попередній аналіз цін.</span></p>
       </li>
       <li class="how__step rv" style="--d:200ms">
         <figure>
@@ -803,9 +783,48 @@ details p { margin-top: 12px; max-width: 60ch; }
             </g></g>
           </svg>
         </figure>
-        <p><strong data-t="st3.h">Юридична перевірка</strong><span data-t="st3.p">Наші юристи проводять повний аудит об’єкта та документів.</span></p>
+        <p><strong data-t="st3.h">Юридичний аудит</strong><span data-t="st3.p">Наша юридична служба перевіряє всі документи, належність права власності, наявність обтяжень та готує потрібні договори.</span></p>
       </li>
       <li class="how__step rv" style="--d:300ms">
+        <figure>
+          <svg class="scene scene5" viewBox="0 0 400 500" role="img" aria-label="Ціни продавця й покупця перекреслені, погоджена ціна та узгоджені умови угоди" data-tl="alt.st5" data-scene>
+            <rect width="400" height="500" fill="#2b2b2b"/>
+            <g font-family="Onest, sans-serif">
+              <g class="s5-offer1">
+                <rect x="40" y="56" width="160" height="72" rx="16" fill="#f4f4f2"/>
+                <text x="58" y="82" font-weight="600" font-size="12" fill="#8a8a8a" data-t="st4.seller">Продавець</text>
+                <text x="58" y="112" font-weight="700" font-size="22" fill="#1b1b1b">95 000 $</text>
+              </g>
+              <path class="s5-strike s5-strike1" pathLength="1" d="M54 105h120" stroke="#cf1409" stroke-width="3.4" stroke-linecap="round"/>
+              <g class="s5-offer2">
+                <rect x="200" y="100" width="160" height="72" rx="16" fill="#cf1409"/>
+                <text x="218" y="126" font-weight="600" font-size="12" fill="#fff" fill-opacity=".78" data-t="st4.buyer">Покупець</text>
+                <text x="218" y="156" font-weight="700" font-size="22" fill="#fff">86 000 $</text>
+              </g>
+              <path class="s5-strike s5-strike2" pathLength="1" d="M214 149h120" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>
+              <g class="s5-deal">
+                <rect x="66" y="200" width="268" height="112" rx="18" fill="#fff"/>
+                <text x="90" y="236" font-weight="600" font-size="13" fill="#8a8a8a" data-t="st5.price">Погоджена ціна</text>
+                <text x="90" y="284" font-weight="700" font-size="38" fill="#1b1b1b">91 500 $</text>
+                <circle cx="300" cy="236" r="14" fill="#cf1409"/>
+                <path d="M293.5 236l4.5 4.5 8-8.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <rect x="66" y="330" width="268" height="138" rx="18" fill="#f4f4f2"/>
+              <g font-weight="600" font-size="13.5" fill="#1b1b1b">
+                <text x="88" y="368" data-t="st5.t1">Задаток</text>
+                <text x="88" y="406" data-t="st5.t2">Порядок розрахунку</text>
+                <text x="88" y="444" data-t="st5.t3">Дата угоди</text>
+              </g>
+              <path d="M88 384h224M88 422h224" stroke="#dcdcd7" stroke-width="1.5"/>
+              <g class="s5-tick s5-tick1"><circle cx="304" cy="364" r="10" fill="#cf1409"/><path d="M299.5 364l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+              <g class="s5-tick s5-tick2"><circle cx="304" cy="402" r="10" fill="#cf1409"/><path d="M299.5 402l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+              <g class="s5-tick s5-tick3 sc-last"><circle cx="304" cy="440" r="10" fill="#cf1409"/><path d="M299.5 440l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+            </g>
+          </svg>
+        </figure>
+        <p><strong data-t="st5.h">Узгодження та переговори</strong><span data-t="st5.p">Ведемо переговори, узгоджуємо фінальні умови угоди, щоб процес пройшов комфортно для обох сторін.</span></p>
+      </li>
+      <li class="how__step rv" style="--d:400ms">
         <figure>
           <svg class="scene4" viewBox="0 0 400 500" role="img" aria-label="Договір купівлі-продажу з підписами сторін, печаткою про реєстрацію права власності та ключами" data-tl="alt.st4" data-scene>
             <rect width="400" height="500" fill="#2b2b2b"/>
@@ -864,7 +883,7 @@ details p { margin-top: 12px; max-width: 60ch; }
             </g>
           </svg>
         </figure>
-        <p><strong data-t="st4.h">Угода та нотаріус</strong><span data-t="st4.p">Безпечне підписання договору та підтвердження права власності.</span></p>
+        <p><strong data-t="st4.h">Угода та нотаріус</strong><span data-t="st4.p">Безпечне підписання договору, підтвердження права власності та передача ключів.</span></p>
       </li>
     </ol>
   </div>
@@ -873,7 +892,7 @@ details p { margin-top: 12px; max-width: 60ch; }
 <section class="faq wrap grid" id="ask" aria-labelledby="ask-h">
   <div class="faq__head"><h2 id="ask-h" class="h2 rv" data-t="ask.h">Часті запитання</h2></div>
   <div class="faq__text">
-    <p class="lead rv" data-t="ask.p">Про вартість послуг, юридичну перевірку та купівлю в іпотеку. Не знайшли відповідь? Напишіть нам.</p>
+    <p class="lead rv" data-t="ask.p">Держпрограми: єОселя, єВідновлення (житлові сертифікати, житлові ваучери), юридичний супровід та інші питання.</p>
     <div class="faq__contacts rv" style="--d:160ms">
       <a class="pill" href="https://t.me/avezor">Telegram</a>
       <a class="pill pill--soft" href="viber://chat?number=380985585050">Viber</a>
@@ -964,9 +983,9 @@ const T = {
 
   'hero.h1': ['Безпечна купівля та продаж нерухомості', 'Безопасная покупка и продажа недвижимости', 'Safe real estate buying and selling'],
   'hero.sub': [
-    'З юридичною гарантією Avezor: юрист перевіряє кожен об’єкт до угоди.',
-    'С юридической гарантией Avezor: юрист проверяет каждый объект до сделки.',
-    'With the Avezor legal guarantee: a lawyer checks every property before the deal.'],
+    'Юридичний супровід на кожному етапі: від запиту до угоди.',
+    'Юридическое сопровождение на каждом этапе: от запроса до сделки.',
+    'Legal support at every stage, from your first request to the deal.'],
   'hero.cta': ['Переглянути', 'Смотреть', 'View'],
   'hero.cta2': ['об’єкти', 'объекта', 'listings'],
   'f.phone': ['Телефон', 'Телефон', 'Phone'],
@@ -980,84 +999,88 @@ const T = {
     'Самостійний пошук або продаж нерухомості часто супроводжується ризиками: прихованими обтяженнями, юридичними пастками та втратою часу. Ми перетворюємо складний процес на просту та безпечну процедуру.',
     'Самостоятельный поиск или продажа недвижимости часто сопряжены с рисками: скрытыми обременениями, юридическими ловушками и потерей времени. Мы превращаем сложный процесс в простую и безопасную процедуру.',
     'Searching for or selling real estate on your own often involves hidden risks: encumbrances, legal traps and wasted time. We turn a complex process into a simple, secure procedure.'],
-  'w1.h': ['Юридична безпека', 'Юридическая безопасность', 'Legal security'],
+  'w1.h': ['Юридичний супровід', 'Юридическое сопровождение', 'Legal support'],
   'w1.p': [
-    'Наші юристи перевіряють історію власності, наявність арештів, боргів та правоустановчі документи ще до укладення угоди.',
-    'Наши юристы проверяют историю собственности, наличие арестов, долгов и правоустанавливающие документы ещё до заключения сделки.',
-    'Our attorneys verify ownership history, encumbrances, debts and legal titles before signing.'],
-  'w2.h': ['Актуальна база об’єктів', 'Актуальная база объектов', 'Verified listings database'],
+    'Наші юристи проводять перемовини, перевіряють історію власності, правовстановлюючі документи, наявність заборон та інших обтяжень.',
+    'Наши юристы ведут переговоры, проверяют историю собственности, правоустанавливающие документы, наличие запретов и других обременений.',
+    'Our lawyers lead the negotiations and check the ownership history, title documents, bans and any other encumbrances.'],
+  'w2.h': ['Кількість пропозицій на сьогодні', 'Количество предложений на сегодня', 'Listings available today'],
   'w2.p': [
-    'Стільки об’єктів на продаж у базі зараз. Працюємо тільки з перевіреними продавцями та забудовниками.',
-    'Столько объектов на продажу в базе сейчас. Работаем только с проверенными продавцами и застройщиками. Никаких «фейковых» объявлений.',
-    'Properties for sale in the database right now. We work exclusively with verified sellers and developers. Zero fake listings.'],
-  'w3.unit': ['год', 'часа', 'h'],
+    'Співпрацюємо з тими, кому довіряємо: надійні забудовники та відповідальні власники.',
+    'Сотрудничаем с теми, кому доверяем: надёжные застройщики и ответственные собственники.',
+    'We work with people we trust: reliable developers and responsible owners.'],
+  'w3.unit': ['на 100%', 'на 100%', 'h at 100%'],
   'w3.h': ['Економія вашого часу', 'Экономия вашего времени', 'Time savings'],
   'w3.p': [
-    'Беремо на себе всі переговори, організацію переглядів та підготовку документів.',
-    'Берём на себя все переговоры, организацию просмотров и подготовку документов.',
-    'We handle all negotiations, property viewings and document preparation for you.'],
-  'w4.h': ['Вигідні умови', 'Выгодные условия', 'Favourable terms'],
+    'Беремо на себе перемовини, організацію переглядів та супровід підготовки документів.',
+    'Берём на себя переговоры, организацию просмотров и сопровождение подготовки документов.',
+    'We take on the negotiations, arrange the viewings and oversee the paperwork.'],
+  'w4.h': ['Чесність та прозорість', 'Честность и прозрачность', 'Honesty & transparency'],
   'w4.p': [
-    'Допомагаємо узгодити найкращу ціну та умови розрахунку.',
-    'Помогаем согласовать лучшую цену и удобные условия расчёта.',
-    'We help negotiate the best price and payment structure for your deal.'],
+    'Заздалегідь обговорені умови співпраці, комісія після укладення угоди. Допомагаємо узгодити найкращу ціну та умови розрахунку.',
+    'Условия сотрудничества обсуждаются заранее, комиссия — после заключения сделки. Помогаем согласовать лучшую цену и условия расчёта.',
+    'Terms of cooperation agreed upfront, commission only once the deal is signed. We help negotiate the best price and payment terms.'],
 
   'svc.h': ['Наші ключові послуги', 'Наши ключевые услуги', 'Our core services'],
   'svc.all': ['Переглянути всі послуги', 'Посмотреть все услуги', 'View all services'],
   's1.h': ['Купівля нерухомості', 'Покупка недвижимости', 'Buying real estate'],
   's1.p': [
-    'Допомога у виборі квартири на первинному чи вторинному ринку, інвестиційні об’єкти з високою окупністю.',
-    'Подбор квартир на первичном и вторичном рынке, инвестиционные объекты с высокой окупаемостью.',
-    'Selection of primary and secondary market properties, plus high-yield investment options.'],
+    'Допомога у виборі будь-якого об’єкта нерухомості на первинному та вторинному ринку. Вигідні інвестиції в нерухомість.',
+    'Помощь в выборе любого объекта недвижимости на первичном и вторичном рынке. Выгодные инвестиции в недвижимость.',
+    'Help choosing any property on the primary and secondary market. Profitable real estate investments.'],
   's2.h': ['Продаж нерухомості', 'Продажа недвижимости', 'Selling real estate'],
   's2.p': [
-    'Професійна оцінка, ефективний маркетинг вашого об’єкта та швидкий вихід на угоду за максимальною ціною.',
-    'Профессиональная оценка, эффективный маркетинг вашего объекта и быстрый выход на сделку по максимальной цене.',
-    'Professional valuation, targeted marketing and quick closing at the maximum market price.'],
+    'Визначення ринкової вартості та звіт оцінювача, ефективний маркетинг об’єкта та легкий вихід на угоду.',
+    'Определение рыночной стоимости и отчёт оценщика, эффективный маркетинг объекта и лёгкий выход на сделку.',
+    'Market valuation with an appraiser’s report, effective marketing and a smooth path to the deal.'],
   's3.h': ['Оренда нерухомості', 'Аренда недвижимости', 'Renting real estate'],
   's3.p': [
-    'Підбір житлової та комерційної нерухомості для довгострокової оренди.',
-    'Подбор жилой и коммерческой недвижимости для долгосрочной аренды.',
-    'Curated selection of residential and commercial spaces for long-term lease.'],
-  's4.h': ['Юридичний супровід', 'Юридическое сопровождение', 'Legal support'],
-  's4.p': [
-    'Повний комплекс юридичних послуг — від перевірки документів до оформлення права власності у нотаріуса.',
-    'Полный комплекс юридических услуг — от проверки документов до оформления права собственности у нотариуса.',
-    'Comprehensive legal solutions, from property verification to title registration with a notary.'],
-  'ex.t': ['Витяг з Державного реєстру речових прав', 'Извлечение из Государственного реестра вещных прав', 'Extract from the State Register of Property Rights'],
-  'ex.s': ['Перевірка перед задатком', 'Проверка перед задатком', 'Checked before the deposit'],
-  'ex.1': ['Право власності', 'Право собственности', 'Ownership'],
-  'ex.2': ['Арешти', 'Аресты', 'Arrests'],
-  'ex.3': ['Іпотека', 'Ипотека', 'Mortgage'],
-  'ex.4': ['Заборона відчуження', 'Запрет отчуждения', 'Ban on disposal'],
-  'ex.ok': ['підтверджено', 'подтверждено', 'confirmed'],
-  'ex.no': ['не виявлено', 'не выявлено', 'none found'],
-  'ex.stamp': ['Перевірено Avezor', 'Проверено Avezor', 'Checked by Avezor'],
+    'Довгострокова та подобова оренда житлової та комерційної нерухомості.',
+    'Долгосрочная и посуточная аренда жилой и коммерческой недвижимости.',
+    'Long-term and daily rentals of residential and commercial property.'],
 
   'nums.h': ['Avezor у цифрах', 'Avezor в цифрах', 'Avezor in numbers'],
   'nums.q': [
-    '«Ми беремо відповідальність за юридичну чистоту кожної угоди, захищаючи ваші інтереси на кожному етапі.»',
-    '«Мы берём ответственность за юридическую чистоту каждой сделки, защищая ваши интересы на каждом этапе.»',
-    '“We take full responsibility for the legal purity of every transaction, protecting your interests at every step.”'],
+    'Юридичний супровід та захист ваших інтересів',
+    'Юридическое сопровождение и защита ваших интересов',
+    'Legal support and protection of your interests'],
   'n1': ['років досвіду на ринку нерухомості та юридичних послуг', 'лет опыта на рынке недвижимости и юридических услуг', 'years of experience in real estate and legal services'],
   'n2': ['успішно закритих угод', 'успешно закрытых сделок', 'successfully closed transactions'],
-  'n3': ['задоволених клієнтів, які рекомендують нас друзям', 'довольных клиентов, рекомендующих нас друзьям', 'satisfied clients who recommend us to friends'],
+  'n3': ['Більшість нових запитів ми отримуємо за рекомендаціями наших клієнтів', 'Большинство новых запросов мы получаем по рекомендациям наших клиентов', 'Most new requests come to us on our clients’ recommendations'],
 
-  'how.h': ['4 простих кроки до угоди', '4 простых шага к сделке', '4 simple steps to a deal'],
+  'how.h': ['5 простих кроків до угоди', '5 простых шагов к сделке', '5 simple steps to a deal'],
   'st1.h': ['Заявка та консультація', 'Заявка и консультация', 'Request & consultation'],
-  'st1.p': ['Ви залишаєте заявку, ми уточнюємо ваші критерії та бюджет.', 'Вы оставляете заявку, мы уточняем ваши критерии и бюджет.', 'Submit a request and we clarify your criteria, preferences and budget.'],
-  'st2.h': ['Підбір та перегляди', 'Подбор и просмотры', 'Selection & viewings'],
-  'st2.p': ['Формуємо персональну добірку та організовуємо зручний графік переглядів.', 'Формируем персональную подборку и организуем удобный график просмотров.', 'We curate a personal selection and arrange a viewing schedule.'],
-  'st3.h': ['Юридична перевірка', 'Юридическая проверка', 'Legal audit'],
-  'st3.p': ['Наші юристи проводять повний аудит об’єкта та документів.', 'Наши юристы проводят полный аудит объекта и документов.', 'Our legal experts conduct a thorough audit of the property and ownership records.'],
+  'st1.p': [
+    'Ви залишаєте заявку або телефонуєте нам. Персональний експерт Avezor зв’язується з вами, щоб детально обговорити ваші цілі, побажання та деталі майбутньої угоди.',
+    'Вы оставляете заявку или звоните нам. Персональный эксперт Avezor связывается с вами, чтобы подробно обсудить ваши цели, пожелания и детали будущей сделки.',
+    'Leave a request or give us a call. A personal Avezor expert gets in touch to talk through your goals, wishes and the details of the deal ahead.'],
+  'st2.h': ['Аналіз ринку та підбір', 'Анализ рынка и подбор', 'Market analysis & selection'],
+  'st2.p': [
+    'Здійснюємо оцінку об’єкта або формуємо добірку найкращих варіантів за вашими критеріями, організовуємо перегляди та проводимо попередній аналіз цін.',
+    'Оцениваем объект или формируем подборку лучших вариантов по вашим критериям, организуем просмотры и проводим предварительный анализ цен.',
+    'We value your property or put together the best options for your criteria, arrange viewings and run a preliminary price analysis.'],
+  'st3.h': ['Юридичний аудит', 'Юридический аудит', 'Legal audit'],
+  'st3.p': [
+    'Наша юридична служба перевіряє всі документи, належність права власності, наявність обтяжень та готує потрібні договори.',
+    'Наша юридическая служба проверяет все документы, принадлежность права собственности, наличие обременений и готовит нужные договоры.',
+    'Our legal team checks every document, the title and any encumbrances, and prepares the contracts you need.'],
+  /* Step 4 in the list; its keys are st5.* because st4.* already belonged to the deal scene. */
+  'st5.h': ['Узгодження та переговори', 'Согласование и переговоры', 'Terms & negotiation'],
+  'st5.p': [
+    'Ведемо переговори, узгоджуємо фінальні умови угоди, щоб процес пройшов комфортно для обох сторін.',
+    'Ведём переговоры и согласовываем финальные условия сделки, чтобы процесс прошёл комфортно для обеих сторон.',
+    'We negotiate and agree the final terms so the process stays comfortable for both sides.'],
   'st4.h': ['Угода та нотаріус', 'Сделка и нотариус', 'Closing & notary'],
-  'st4.p': ['Безпечне підписання договору та підтвердження права власності.', 'Безопасное подписание договора и подтверждение права собственности.', 'Secure signing of the agreement and official title transfer.'],
+  'st4.p': [
+    'Безпечне підписання договору, підтвердження права власності та передача ключів.',
+    'Безопасное подписание договора, подтверждение права собственности и передача ключей.',
+    'Secure signing of the contract, confirmation of ownership and handover of the keys.'],
 
   'ask.h': ['Часті запитання', 'Частые вопросы', 'Frequently asked questions'],
   'ask.p': [
-    'Про вартість послуг, юридичну перевірку та купівлю в іпотеку. Не знайшли відповідь? Напишіть нам.',
-    'О стоимости услуг, юридической проверке и покупке в ипотеку. Не нашли ответ? Напишите нам.',
-    'On fees, the legal check and buying with a mortgage. No answer here? Message us.'],
+    'Держпрограми: єОселя, єВідновлення (житлові сертифікати, житлові ваучери), юридичний супровід та інші питання.',
+    'Госпрограммы: єОселя, єВідновлення (жилищные сертификаты, жилищные ваучеры), юридическое сопровождение и другие вопросы.',
+    'State programmes: eOselia, eVidnovlennia (housing certificates and vouchers), legal support and other questions.'],
   'q1': ['Скільки коштують послуги агентства нерухомості Avezor?', 'Сколько стоят услуги агентства недвижимости Avezor?', 'How much do Avezor real estate agency services cost?'],
   'a1': [
     'Вартість залежить від типу угоди та обсягу послуг. Ми працюємо прозоро — фіксований відсоток або вартість послуги обговорюється до початку співпраці та фіксується у договорі.',
@@ -1138,6 +1161,11 @@ const T = {
   'st3.scale': ['Масштаб 1:100', 'Масштаб 1:100', 'Scale 1:100'],
   'st3.doc': ['Технічний паспорт', 'Технический паспорт', 'Technical passport'],
   'st3.ok': ['Площа збігається', 'Площадь совпадает', 'Area matches'],
+  'alt.st5': ['Ціни продавця й покупця перекреслені, погоджена ціна та узгоджені умови угоди', 'Цены продавца и покупателя зачёркнуты, согласованная цена и условия сделки', 'The seller’s and buyer’s prices struck out, the agreed price and the settled terms'],
+  'st5.price': ['Погоджена ціна', 'Согласованная цена', 'Agreed price'],
+  'st5.t1': ['Задаток', 'Задаток', 'Deposit'],
+  'st5.t2': ['Порядок розрахунку', 'Порядок расчёта', 'Payment terms'],
+  'st5.t3': ['Дата угоди', 'Дата сделки', 'Closing date'],
   'alt.st2': ['Добірка з трьох квартир і календар із двома призначеними переглядами', 'Подборка из трёх квартир и календарь с двумя назначенными просмотрами', 'A shortlist of three apartments and a calendar with two viewings booked'],
   'alt.st3': ['План квартири з технічного паспорта, одна кімната виділена для звірки', 'План квартиры из технического паспорта, одна комната выделена для сверки', 'A floor plan from a technical passport with one room marked for checking'],
   'alt.st4': ['Договір купівлі-продажу з підписами сторін, печаткою про реєстрацію права власності та ключами', 'Договор купли-продажи с подписями сторон, печатью о регистрации права собственности и ключами', 'A sale contract signed by both parties, stamped as ownership registered, with the keys'],
