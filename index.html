@@ -89,8 +89,11 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 .hero__scrim--low { inset: auto 0 0 0; height: 55%; /* taste-skill-ignore: neutral scrim under text */ background: linear-gradient(0deg, rgba(10,12,14,.5), rgba(10,12,14,0)); }
 
 .bar { position: absolute; z-index: 3; top: 0; left: 0; right: 0; display: flex; align-items: center; gap: 40px; padding: 24px var(--m); }
-.bar__logo img { width: 116px; height: auto; }
-.bar__nav { display: flex; gap: 4px; }
+.bar__logo { display: flex; align-items: center; }
+/* The apex of the A rises above the wordmark, so the box centre sits above the letters:
+   lift the logo until "vezor" shares a centre line with the nav labels. */
+.bar__logo img { width: 116px; height: auto; transform: translateY(-4px); }
+.bar__nav { display: flex; align-items: center; gap: 4px; }
 .bar__nav a { text-decoration: none; font-weight: 700; padding: 10px 14px; border-radius: var(--pill); transition: background-color .2s; }
 .bar__nav a:hover { background: rgba(255,255,255,.18); }
 .bar__end { margin-left: auto; display: flex; align-items: center; gap: 16px; }
@@ -142,12 +145,20 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 .tile--blush { background: var(--blush); }
 .tile--blush .tile__big { color: var(--accent); }
 .tile--deep { background: var(--deep); color: #fff; }
-.tile--grey { background: var(--surface); grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
-.tile--grey > div:first-child { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.tile--grey { background: var(--surface); grid-column: span 2; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: stretch; }
+/* Heading and line travel together at the foot, a price-tag mark holds the top:
+   the same top-mark / bottom-text rhythm as the number tiles beside it. */
+.tile--grey > div:first-child { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.tile--grey .tile__copy p { margin-top: 12px; max-width: 22em; }
+.tile__mark { width: 64px; height: 64px; border-radius: 50%; background: #fff; color: var(--accent); display: grid; place-items: center; }
+.tile__mark svg { width: 28px; height: 28px; }
 .tile__pic { border-radius: var(--r-m); overflow: hidden; }
 .tile__pic img { width: 100%; height: 100%; object-fit: cover; }
-.tile--red .tile__pic { aspect-ratio: 4 / 3; }
-.tile--grey .tile__pic { min-height: 240px; }
+/* The red tile spans both rows, so its photo sets the height of the "Вигідні умови" row. */
+.tile--red .tile__pic { aspect-ratio: 16 / 10; }
+/* Out of flow, so the portrait photo fills the row instead of stretching it. */
+.tile--grey .tile__pic { min-height: 240px; position: relative; }
+.tile--grey .tile__pic img { position: absolute; inset: 0; }
 
 /* ---------- Services: v3 district grid, one tile per service ---------- */
 .svc { padding-top: var(--section); }
@@ -180,11 +191,14 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 .nums { padding-top: var(--section); }
 .nums__head { grid-column: 1 / 13; display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: end; margin-bottom: 40px; }
 .nums__head blockquote { font-family: var(--display); font-size: clamp(24px, 2.3vw, 34px); font-weight: 700; line-height: 1.22; letter-spacing: -.015em; max-width: 26em; }
-.nums__panel { grid-column: 1 / 13; background: var(--blush); border-radius: var(--r-l); padding: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) .8fr; gap: 32px; align-items: stretch; min-height: 440px; }
-.num { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.nums__panel { grid-column: 1 / 13; background: var(--blush); border-radius: var(--r-l); padding: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) .8fr; gap: 32px; align-items: center; }
+/* Figure and caption read as one unit; the photo alone sets the panel height. */
+.num { display: flex; flex-direction: column; gap: 20px; padding-left: 28px; border-left: 2px solid rgba(207,20,9,.16); }
+.num:first-child { padding-left: 0; border-left: 0; }
 .num__n { font-family: var(--display); font-size: var(--t-xl); font-weight: 600; letter-spacing: -.05em; line-height: .9; color: var(--accent); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.num p { font-size: var(--t-b); font-weight: 600; line-height: 1.35; max-width: 16em; }
-.nums__pic { border-radius: var(--r-m); overflow: hidden; }
+/* Room for three caption lines in every column keeps the figures on one line when centred. */
+.num p { font-size: var(--t-b); font-weight: 600; line-height: 1.35; max-width: 16em; min-height: 4.05em; }
+.nums__pic { border-radius: var(--r-m); overflow: hidden; height: 280px; }
 .nums__pic img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- How it works: a dark field, four steps going down ---------- */
@@ -199,6 +213,73 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 .how__step img, .how__step svg { width: 100%; height: 100%; object-fit: cover; display: block; }
 .how__step p { color: #e6e6e6; }
 .how__step strong { display: block; color: #fff; font-family: var(--display); font-size: var(--t-m); font-weight: 600; letter-spacing: -.01em; line-height: 1.2; margin-bottom: 8px; }
+
+/* Steps 1-3 follow the same rule as step 4 below: the resting frame is the finished one. */
+.scene [class^="s1-"], .scene [class^="s2-"], .scene [class^="s3-"] { transform-box: fill-box; transform-origin: center; }
+@keyframes sc-pop { from { opacity: 0; transform: translateY(10px) scale(.85); } to { opacity: 1; transform: none; } }
+@keyframes sc-badge { from { opacity: 0; transform: scale(0); } 70% { transform: scale(1.15); } to { opacity: 1; transform: none; } }
+/* Chat: question, typing, answer, the criteria as quick replies, the request confirmed. */
+.scene1 .s1-typing { opacity: 0; }
+.scene1 .s1-user { transform-origin: 100% 100%; }
+.scene1 .s1-reply, .scene1 .s1-typing { transform-origin: 0 100%; }
+.scene1.is-play .s1-user { animation: sc-pop .4s var(--ease) .2s backwards; }
+.scene1.is-play .s1-typing { animation: s1-typing 1s ease .7s; }
+.scene1.is-play .s1-reply { animation: sc-pop .4s var(--ease) 1.6s backwards; }
+.scene1.is-play .s1-chip1 { animation: sc-pop .35s var(--ease) 2.05s backwards; }
+.scene1.is-play .s1-chip2 { animation: sc-pop .35s var(--ease) 2.2s backwards; }
+.scene1.is-play .s1-chip3 { animation: sc-pop .35s var(--ease) 2.35s backwards; }
+.scene1.is-play .s1-card { animation: sc-pop .5s var(--ease) 2.75s backwards; }
+@keyframes s1-typing { 0% { opacity: 0; transform: scale(.85); } 15%, 85% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+/* Shortlist: the stack fans out, then two viewing days get circled. */
+.scene2.is-play .s2-card--l { animation: s2-left .7s var(--ease) .2s backwards; }
+.scene2.is-play .s2-card--r { animation: s2-right .7s var(--ease) .3s backwards; }
+.scene2.is-play .s2-card--m { animation: s2-mid .7s var(--ease) .2s backwards; }
+.scene2.is-play .s2-day1 { animation: sc-badge .4s var(--ease) 1.1s backwards; }
+.scene2.is-play .s2-day2 { animation: sc-badge .4s var(--ease) 1.4s backwards; }
+.scene2.is-play .s2-tag { animation: sc-pop .4s var(--ease) 1.8s backwards; }
+@keyframes s2-left { from { transform: translate(58px, -14px) rotate(9deg); } to { transform: none; } }
+@keyframes s2-right { from { transform: translate(-62px, -30px) rotate(-9deg); } to { transform: none; } }
+@keyframes s2-mid { from { transform: translateY(14px); } to { transform: none; } }
+/* Audit: the lens checks room by room, the disputed room is outlined, the area confirmed. */
+.scene3.is-play .s3-lens { animation: s3-lens 1.8s cubic-bezier(.65,0,.35,1) .2s backwards; }
+.scene3.is-play .s3-check1 { animation: sc-badge .35s var(--ease) .75s backwards; }
+.scene3.is-play .s3-check2 { animation: sc-badge .35s var(--ease) 1.25s backwards; }
+.scene3.is-play .s3-room { animation: s3-room 1.2s linear 1.5s backwards; }
+.scene3.is-play .s3-pill { animation: sc-pop .45s var(--ease) 2.15s backwards; }
+@keyframes s3-lens {
+  0% { opacity: 0; transform: translate(-206px, 30px); }
+  10%, 26% { opacity: 1; transform: translate(-206px, 41px); }
+  46%, 58% { transform: translate(-206px, 171px); }
+  100% { transform: none; }
+}
+@keyframes s3-room { from { fill-opacity: 0; stroke-opacity: 0; stroke-dashoffset: 96; } 25% { stroke-opacity: 1; } to { fill-opacity: .22; stroke-dashoffset: 0; } }
+
+/* Step 4 scene. At rest it shows the finished deal; .is-play rewinds and replays it:
+   signature, stamp (the paper takes the hit), keys. `backwards` holds each part in its
+   start pose until its turn. */
+.scene4 .s4-sign { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.scene4 .s4-stamp, .scene4 .s4-paper, .scene4 .s4-key { transform-box: fill-box; transform-origin: center; }
+.scene4.is-play .s4-sign { animation: s4-sign 1s cubic-bezier(.45,.05,.55,.95) .2s backwards; }
+.scene4.is-play .s4-pen { animation: s4-pen 1s linear .2s backwards; }
+.scene4.is-play .s4-stamp { animation: s4-stamp .5s cubic-bezier(.5,0,.75,0) 1.3s backwards; }
+.scene4.is-play .s4-paper { animation: s4-thud .3s ease-out 1.78s; }
+.scene4.is-play .s4-key { animation: s4-key .8s cubic-bezier(.34,1.4,.64,1) 1.9s backwards; }
+@keyframes s4-sign { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+/* Follows the signature's peaks and troughs left to right (its path spans x 216-330). */
+@keyframes s4-pen {
+  0% { transform: translate(-114px, 22px); } 12% { transform: translate(-96px, 2px); }
+  22% { transform: translate(-98px, 26px); } 34% { transform: translate(-82px, 4px); }
+  45% { transform: translate(-74px, 22px); } 56% { transform: translate(-60px, 8px); }
+  65% { transform: translate(-56px, 20px); } 78% { transform: translate(-36px, 6px); }
+  88% { transform: translate(-22px, 8px); } 100% { transform: none; }
+}
+@keyframes s4-stamp {
+  0% { opacity: 0; transform: translateY(-70px) scale(1.7) rotate(18deg); }
+  60% { opacity: 1; }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes s4-thud { 0%, 100% { transform: none; } 35% { transform: translateY(3px) scale(.995); } }
+@keyframes s4-key { from { opacity: 0; transform: translate(-140px, 70px) rotate(-50deg); } to { opacity: 1; transform: none; } }
 
 /* Layered waves behind the dark and red panels. */
 .how, .close { position: relative; overflow: hidden; isolation: isolate; }
@@ -223,6 +304,8 @@ summary::-webkit-details-marker { display: none; }
 .plus::after { transform: rotate(90deg); transition: transform .3s var(--ease); }
 details[open] .plus::after { transform: rotate(0); }
 details p { margin-top: 12px; max-width: 60ch; }
+/* Open/close is animated from script; clip only while it runs so focus rings stay visible. */
+.faq__list details.is-anim { overflow: hidden; }
 
 /* ---------- Closing: the lead form again, on red ---------- */
 .close { margin: var(--section) 16px 0; background: #fdf3f1; color: var(--ink); border-radius: var(--r-l); padding: 96px calc(var(--m) - 16px + 24px); }
@@ -279,7 +362,7 @@ details p { margin-top: 12px; max-width: 60ch; }
   .svc__grid .svc__tile:first-child { grid-row: auto; grid-column: span 2; }
   .svc__tile--legal { grid-auto-rows: auto; }
   .nums__panel { grid-template-columns: repeat(3, 1fr); }
-  .nums__pic { grid-column: 1 / -1; min-height: 280px; }
+  .nums__pic { grid-column: 1 / -1; }
   .how__steps { grid-template-columns: 1fr 1fr; }
   .how__step:nth-child(n) { margin-top: 0; }
   .how__step:nth-child(even) { margin-top: 80px; }
@@ -383,16 +466,19 @@ details p { margin-top: 12px; max-width: 60ch; }
   .stamp { right: 12px; }
 
   .nums__head blockquote { font-size: 22px; }
-  .nums__panel { grid-template-columns: 1fr; padding: 24px; gap: 28px; min-height: 0; }
+  .nums__panel { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+  .num, .num:first-child { gap: 12px; padding-left: 0; border-left: 0; }
+  .num + .num { padding-top: 24px; border-top: 2px solid rgba(207,20,9,.16); }
   .num__n { font-size: 64px; }
-  .num p { font-size: 17px; }
-  .nums__pic { grid-column: auto; min-height: 220px; }
+  .num p { font-size: 17px; min-height: 0; }
+  .nums__pic { grid-column: auto; height: 220px; }
 
   .how { margin-left: 8px; margin-right: 8px; padding: 72px var(--m); }
   .how__head { margin-bottom: 36px; }
   .how__steps { grid-template-columns: 1fr; gap: 36px; }
   .how__step:nth-child(n) { margin-top: 0; }
-  .how__step figure { aspect-ratio: 16 / 10; }
+  /* The step scenes are drawn 4:5; a wide crop would shrink them to a strip. */
+  .how__step figure { max-width: 420px; }
 
   .faq__head { margin-bottom: 20px; }
   .faq__text { margin-bottom: 24px; }
@@ -532,8 +618,11 @@ details p { margin-top: 12px; max-width: 60ch; }
     </div>
     <div class="tile tile--grey rv" style="--d:240ms">
       <div>
-        <h3 class="tile__big tile__big--word" data-t="w4.h">Вигідні умови</h3>
-        <p data-t="w4.p">Допомагаємо узгодити найкращу ціну та умови розрахунку.</p>
+        <span class="tile__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12.6V4.5A1.5 1.5 0 0 1 4.5 3h8.1a1.5 1.5 0 0 1 1.06.44l6.9 6.9a1.5 1.5 0 0 1 0 2.12l-8.1 8.1a1.5 1.5 0 0 1-2.12 0l-6.9-6.9A1.5 1.5 0 0 1 3 12.6Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="8" cy="8" r="1.6" fill="currentColor"/></svg></span>
+        <div class="tile__copy">
+          <h3 class="tile__big tile__big--word" data-t="w4.h">Вигідні умови</h3>
+          <p data-t="w4.p">Допомагаємо узгодити найкращу ціну та умови розрахунку.</p>
+        </div>
       </div>
       <div class="tile__pic"><img src="assets/listings/BU50959470-0.jpg" width="544" height="682" alt="Кухня-вітальня з ремонтом у новобудові у Львові" data-ta="alt.w4"></div>
     </div>
@@ -590,16 +679,103 @@ details p { margin-top: 12px; max-width: 60ch; }
     </div>
     <ol class="how__steps">
       <li class="how__step rv">
-        <figure><img src="assets/found/sumska-street-kharkiv-2021-02.jpg" width="1920" height="1280" alt="Вулиця Сумська в Харкові взимку" data-ta="alt.st1"></figure>
+        <figure>
+          <svg class="scene scene1" viewBox="0 0 400 500" role="img" aria-label="Чат з менеджером Avezor у телефоні: запит на квартиру, уточнення бюджету та району, заявку прийнято" data-tl="alt.st1" data-scene>
+            <rect width="400" height="500" fill="#2b2b2b"/>
+            <rect x="96" y="44" width="220" height="440" rx="32" fill="#000" opacity=".28"/>
+            <rect x="90" y="36" width="220" height="440" rx="32" fill="#111"/>
+            <rect x="100" y="46" width="200" height="420" rx="24" fill="#f4f4f2"/>
+            <path d="M100 70a24 24 0 0 1 24-24h152a24 24 0 0 1 24 24v32H100z" fill="#fff"/>
+            <circle cx="128" cy="78" r="15" fill="#cf1409"/>
+            <path d="M128 69l-6.5 15h3.6l2.9-7.4 2.9 7.4h3.6z" fill="#fff"/>
+            <g font-family="Onest, sans-serif">
+              <text x="152" y="75" font-weight="700" font-size="13.5" fill="#1b1b1b">Avezor</text>
+              <circle cx="155" cy="88" r="3" fill="#2fa84f"/>
+              <text x="162" y="92" font-weight="600" font-size="11" fill="#8a8a8a" data-t="st1.online">онлайн</text>
+              <g class="s1-user">
+                <rect x="146" y="118" width="142" height="54" rx="16" fill="#cf1409"/>
+                <text x="160" y="141" font-weight="600" font-size="12.5" fill="#fff" data-t="st1.u1">Шукаю 2-кімнатну</text>
+                <text x="160" y="158" font-weight="600" font-size="12.5" fill="#fff" data-t="st1.u2">у Києві</text>
+              </g>
+              <g class="s1-typing">
+                <rect x="112" y="186" width="60" height="32" rx="16" fill="#fff"/>
+                <circle cx="130" cy="202" r="3.6" fill="#bdbdb8"/><circle cx="142" cy="202" r="3.6" fill="#bdbdb8"/><circle cx="154" cy="202" r="3.6" fill="#bdbdb8"/>
+              </g>
+              <g class="s1-reply">
+                <rect x="112" y="186" width="176" height="54" rx="16" fill="#fff"/>
+                <text x="124" y="209" font-weight="600" font-size="12" fill="#1b1b1b" data-t="st1.m1">Підберемо! Який бюджет</text>
+                <text x="124" y="226" font-weight="600" font-size="12" fill="#1b1b1b" data-t="st1.m2">і район?</text>
+              </g>
+              <g font-weight="700" font-size="11.5" fill="#cf1409" text-anchor="middle">
+                <g class="s1-chip s1-chip1"><rect x="118" y="256" width="78" height="28" rx="14" fill="#fdecea"/><text x="157" y="274" data-t="st1.c1">2 кімнати</text></g>
+                <g class="s1-chip s1-chip2"><rect x="202" y="256" width="86" height="28" rx="14" fill="#fdecea"/><text x="245" y="274" data-t="st1.c2">до 90 000 $</text></g>
+                <g class="s1-chip s1-chip3"><rect x="226" y="292" width="62" height="28" rx="14" fill="#fdecea"/><text x="257" y="310" data-t="st1.c3">Поділ</text></g>
+              </g>
+              <g class="s1-card sc-last">
+                <rect x="112" y="342" width="176" height="62" rx="16" fill="#fff"/>
+                <circle cx="138" cy="373" r="13" fill="#cf1409"/>
+                <path d="M132 373l4.5 4.5 8-8.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="160" y="369" font-weight="700" font-size="12.5" fill="#1b1b1b" data-t="st1.ok">Заявку прийнято</text>
+                <text x="160" y="386" font-weight="600" font-size="10.5" fill="#8a8a8a" data-t="st1.ok2">Ми вам зателефонуємо</text>
+              </g>
+              <rect x="112" y="422" width="176" height="32" rx="16" fill="#fff"/>
+              <text x="128" y="442" font-weight="600" font-size="11.5" fill="#9a9a96" data-t="st1.input">Повідомлення</text>
+              <circle cx="272" cy="438" r="11" fill="#cf1409"/>
+              <path d="M267 438h9M272.5 434l4 4-4 4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </figure>
         <p><strong data-t="st1.h">Заявка та консультація</strong><span data-t="st1.p">Ви залишаєте заявку, ми уточнюємо ваші критерії та бюджет.</span></p>
       </li>
       <li class="how__step rv" style="--d:100ms">
-        <figure><img src="assets/listings/RE95461947-0.jpg" width="1000" height="750" alt="Світла вітальня квартири з дизайнерським ремонтом у Львові" data-ta="alt.st2"></figure>
+        <figure>
+          <svg class="scene scene2" viewBox="0 0 400 500" role="img" aria-label="Добірка з трьох квартир і календар із двома призначеними переглядами" data-tl="alt.st2" data-scene>
+            <defs><clipPath id="s2-clip"><rect width="170" height="140" rx="14"/></clipPath></defs>
+            <rect width="400" height="500" fill="#2b2b2b"/>
+            <g font-family="Onest, sans-serif">
+              <!-- Outer groups hold the fanned pose; .s2-card starts stacked on the middle one. -->
+              <g transform="translate(55 70) rotate(-9 85 105)"><g class="s2-card s2-card--l">
+                <rect width="170" height="210" rx="14" fill="#f4f4f2"/>
+                <image href="assets/listings/RE55273134-0.jpg" width="170" height="112" preserveAspectRatio="xMidYMid slice" clip-path="url(#s2-clip)"/>
+                <text x="14" y="142" font-weight="700" font-size="18" fill="#1b1b1b">74 900 $</text>
+                <text x="14" y="164" font-weight="600" font-size="11.5" fill="#8a8a8a" data-t="st2.a">2 кімн. · 52 м²</text>
+              </g></g>
+              <g transform="translate(175 74) rotate(9 85 105)"><g class="s2-card s2-card--r">
+                <rect width="170" height="210" rx="14" fill="#f4f4f2"/>
+                <image href="assets/listings/BU66756627-0.jpg" width="170" height="112" preserveAspectRatio="xMidYMid slice" clip-path="url(#s2-clip)"/>
+                <text x="14" y="142" font-weight="700" font-size="18" fill="#1b1b1b">96 500 $</text>
+                <text x="14" y="164" font-weight="600" font-size="11.5" fill="#8a8a8a" data-t="st2.b">2 кімн. · 67 м²</text>
+              </g></g>
+              <g transform="translate(115 48)"><g class="s2-card s2-card--m">
+                <rect x="4" y="8" width="170" height="210" rx="14" fill="#000" opacity=".28"/>
+                <rect width="170" height="210" rx="14" fill="#fff"/>
+                <image href="assets/listings/RE95461947-0.jpg" width="170" height="112" preserveAspectRatio="xMidYMid slice" clip-path="url(#s2-clip)"/>
+                <text x="14" y="142" font-weight="700" font-size="18" fill="#1b1b1b">82 000 $</text>
+                <text x="14" y="164" font-weight="600" font-size="11.5" fill="#8a8a8a" data-t="st2.c">2 кімн. · 58 м²</text>
+                <circle cx="146" cy="186" r="12" fill="#fdecea"/>
+                <path d="M146 192s-6-3.7-6-8.2a3.4 3.4 0 0 1 6-2 3.4 3.4 0 0 1 6 2c0 4.5-6 8.2-6 8.2z" fill="#cf1409"/>
+              </g></g>
+
+              <rect x="66" y="306" width="268" height="164" rx="14" fill="#000" opacity=".28"/>
+              <rect x="60" y="298" width="268" height="164" rx="14" fill="#f4f4f2"/>
+              <text x="80" y="326" font-weight="700" font-size="13.5" fill="#1b1b1b" data-t="st2.cal">Перегляди</text>
+              <g class="s2-tag sc-last"><rect x="216" y="310" width="96" height="24" rx="12" fill="#cf1409"/><text x="264" y="326" text-anchor="middle" font-weight="700" font-size="11" fill="#fff" data-t="st2.tag">2 перегляди</text></g>
+              <g font-weight="600" font-size="11" fill="#8a8a8a" text-anchor="middle">
+                <text x="86" y="356">1</text><text x="122" y="356">2</text><text x="158" y="356">3</text><text x="194" y="356">4</text><text x="230" y="356">5</text><text x="266" y="356">6</text><text x="302" y="356">7</text>
+                <text x="86" y="384">8</text><text x="122" y="384">9</text><text x="158" y="384">10</text><text x="194" y="384">11</text><text x="230" y="384">12</text><text x="266" y="384">13</text><text x="302" y="384">14</text>
+                <text x="86" y="412">15</text><text x="122" y="412">16</text><text x="158" y="412">17</text><text x="194" y="412">18</text><text x="230" y="412">19</text><text x="266" y="412">20</text><text x="302" y="412">21</text>
+                <text x="86" y="440">22</text><text x="122" y="440">23</text><text x="158" y="440">24</text><text x="194" y="440">25</text><text x="230" y="440">26</text><text x="266" y="440">27</text><text x="302" y="440">28</text>
+              </g>
+              <g class="s2-day s2-day1"><circle cx="194" cy="380" r="13" fill="#cf1409"/><text x="194" y="384" text-anchor="middle" font-weight="700" font-size="11" fill="#fff">11</text></g>
+              <g class="s2-day s2-day2"><circle cx="122" cy="408" r="13" fill="#cf1409"/><text x="122" y="412" text-anchor="middle" font-weight="700" font-size="11" fill="#fff">16</text></g>
+            </g>
+          </svg>
+        </figure>
         <p><strong data-t="st2.h">Підбір та перегляди</strong><span data-t="st2.p">Формуємо персональну добірку та організовуємо зручний графік переглядів.</span></p>
       </li>
       <li class="how__step rv" style="--d:200ms">
         <figure>
-          <svg viewBox="0 0 400 500" role="img" aria-label="План квартири з технічного паспорта, одна кімната виділена для звірки" data-tl="alt.st3">
+          <svg class="scene scene3" viewBox="0 0 400 500" role="img" aria-label="План квартири з технічного паспорта, одна кімната виділена для звірки" data-tl="alt.st3" data-scene>
             <rect width="400" height="500" fill="#2b2b2b"/>
             <g fill="none" stroke="#f4f4f2" stroke-width="5" stroke-linejoin="round">
               <rect x="50" y="70" width="300" height="360"/>
@@ -609,16 +785,85 @@ details p { margin-top: 12px; max-width: 60ch; }
               <text x="110" y="160">16,2</text><text x="260" y="160">15,3</text><text x="110" y="290">11,6</text>
               <text x="305" y="290">8,4</text><text x="230" y="390">8,3</text><text x="80" y="390">4,7</text>
             </g>
-            <rect x="170" y="70" width="180" height="160" fill="#cf1409" fill-opacity=".22" stroke="#cf1409" stroke-width="6" stroke-dasharray="14 10"/>
+            <rect class="s3-room" x="170" y="70" width="180" height="160" fill="#cf1409" fill-opacity=".22" stroke="#cf1409" stroke-width="6" stroke-dasharray="14 10"/>
             <g fill="#bdbdbd" font-family="Onest, sans-serif" font-weight="600" font-size="15">
-              <text x="50" y="52">Масштаб 1:100</text><text x="350" y="465" text-anchor="end">Технічний паспорт</text>
+              <text x="50" y="52" data-t="st3.scale">Масштаб 1:100</text><text x="350" y="465" text-anchor="end" data-t="st3.doc">Технічний паспорт</text>
             </g>
+            <g class="s3-check s3-check1"><circle cx="146" cy="153" r="10" fill="#cf1409"/><path d="M141.5 153l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <g class="s3-check s3-check2"><circle cx="146" cy="283" r="10" fill="#cf1409"/><path d="M141.5 283l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <g class="s3-pill sc-last">
+              <rect x="182" y="182" width="156" height="32" rx="16" fill="#f4f4f2"/>
+              <circle cx="199" cy="198" r="9" fill="#cf1409"/>
+              <path d="M195 198l2.8 2.8 5.2-5.6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="214" y="202.5" font-family="Onest, sans-serif" font-weight="700" font-size="12" fill="#1b1b1b" data-t="st3.ok">Площа збігається</text>
+            </g>
+            <g transform="translate(316 112)"><g class="s3-lens">
+              <path d="M24 24l30 30" stroke="#f4f4f2" stroke-width="10" stroke-linecap="round"/>
+              <circle r="34" fill="#f4f4f2" fill-opacity=".12" stroke="#f4f4f2" stroke-width="6"/>
+            </g></g>
           </svg>
         </figure>
         <p><strong data-t="st3.h">Юридична перевірка</strong><span data-t="st3.p">Наші юристи проводять повний аудит об’єкта та документів.</span></p>
       </li>
       <li class="how__step rv" style="--d:300ms">
-        <figure><img src="assets/listings/BU66756627-0.jpg" width="1000" height="604" alt="Вітальня з панорамним вікном у новобудові в Харкові" data-ta="alt.st4"></figure>
+        <figure>
+          <svg class="scene4" viewBox="0 0 400 500" role="img" aria-label="Договір купівлі-продажу з підписами сторін, печаткою про реєстрацію права власності та ключами" data-tl="alt.st4" data-scene>
+            <rect width="400" height="500" fill="#2b2b2b"/>
+            <g transform="rotate(-3 200 250)">
+              <g class="s4-paper">
+                <rect x="62" y="64" width="288" height="380" rx="12" fill="#000" opacity=".28"/>
+                <rect x="56" y="56" width="288" height="380" rx="12" fill="#f4f4f2"/>
+                <text x="84" y="106" font-family="Onest, sans-serif" font-weight="700" font-size="26" fill="#1b1b1b" data-t="st4.doc">ДОГОВІР</text>
+                <text x="84" y="130" font-family="Onest, sans-serif" font-weight="600" font-size="14" fill="#8a8a8a" data-t="st4.doc2">купівлі-продажу квартири</text>
+                <g fill="#dcdcd7">
+                  <rect x="84" y="158" width="232" height="6" rx="3"/><rect x="84" y="176" width="210" height="6" rx="3"/>
+                  <rect x="84" y="194" width="226" height="6" rx="3"/><rect x="84" y="212" width="150" height="6" rx="3"/>
+                  <rect x="84" y="242" width="232" height="6" rx="3"/><rect x="84" y="260" width="196" height="6" rx="3"/>
+                  <rect x="84" y="278" width="120" height="6" rx="3"/>
+                </g>
+                <path d="M84 374h106M214 374h102" stroke="#bdbdb8" stroke-width="2"/>
+                <g font-family="Onest, sans-serif" font-weight="600" font-size="12" fill="#8a8a8a">
+                  <text x="84" y="394" data-t="st4.seller">Продавець</text><text x="214" y="394" data-t="st4.buyer">Покупець</text>
+                </g>
+                <path d="M90 366c4-16 11-24 16-18s-5 18 0 20 12-18 18-18-3 14 3 14 15-10 21-13 9 3 17-1 12-5 18-7" fill="none" stroke="#24408e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path class="s4-sign" pathLength="1" d="M216 366c6-18 14-26 18-20s-6 22-2 24 10-20 16-22 2 18 8 18 10-14 14-14-2 12 4 12 14-10 20-14 8 4 14 2 16-6 22-8" fill="none" stroke="#24408e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <!-- Inner groups carry the CSS motion; outer ones keep the resting pose. -->
+              <g transform="translate(270 292) rotate(-14)">
+                <g class="s4-stamp" opacity=".9">
+                  <!-- Baseline r=36.5 puts the caps midway between the rings (r 46 and 31.8). The ring
+                       starts at the bottom, so the gap left by textLength falls under the check. -->
+                  <path id="s4-ring" d="M0 36.5a36.5 36.5 0 1 1 0-73a36.5 36.5 0 1 1 0 73" fill="none"/>
+                  <circle r="48" fill="none" stroke="#cf1409" stroke-width="4"/>
+                  <circle r="31" fill="none" stroke="#cf1409" stroke-width="1.6"/>
+                  <text font-family="Onest, sans-serif" font-weight="700" font-size="8.4" fill="#cf1409" textLength="201" lengthAdjust="spacingAndGlyphs"><textPath href="#s4-ring" startOffset="14" data-t="st4.stamp">ПРАВО ВЛАСНОСТІ ЗАРЕЄСТРОВАНО</textPath></text>
+                  <text y="-3" text-anchor="middle" font-family="Onest, sans-serif" font-weight="700" font-size="12" letter-spacing="1" fill="#cf1409">AVEZOR</text>
+                  <path d="M-8 6.5l5.5 5.5 11-11" fill="none" stroke="#cf1409" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+              </g>
+              <g transform="translate(330 344)">
+                <g class="s4-pen">
+                  <g transform="rotate(-38)">
+                    <path d="M0 0l9-5v10z" fill="#1b1b1b"/>
+                    <rect x="8" y="-7" width="132" height="14" rx="7" fill="#1b1b1b"/>
+                    <rect x="34" y="-7" width="8" height="14" fill="#cf1409"/>
+                    <rect x="96" y="-9" width="36" height="4" rx="2" fill="#9a9a96"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g transform="translate(118 452) rotate(-18)">
+              <g class="s4-key sc-last">
+                <rect x="-104" y="-17" width="62" height="34" rx="9" fill="#cf1409"/>
+                <circle cx="-95" cy="0" r="3.4" fill="#2b2b2b"/>
+                <text x="-66" y="4" text-anchor="middle" font-family="Onest, sans-serif" font-weight="700" font-size="11" fill="#fff">Avezor</text>
+                <circle cx="-30" cy="0" r="9" fill="none" stroke="#bdbdb8" stroke-width="3"/>
+                <circle cx="0" cy="0" r="18" fill="none" stroke="#e4e4e0" stroke-width="8"/>
+                <path d="M18 -4.5h74v9h-6v10h-8v-10h-8v7h-8v-7h-44z" fill="#e4e4e0"/>
+              </g>
+            </g>
+          </svg>
+        </figure>
         <p><strong data-t="st4.h">Угода та нотаріус</strong><span data-t="st4.p">Безпечне підписання договору та підтвердження права власності.</span></p>
       </li>
     </ol>
@@ -873,10 +1118,34 @@ const T = {
   'alt.s2': ['Дуплекс на вулиці Долинній у Львові', 'Дуплекс на улице Долинной во Львове', 'A duplex on Dolynna Street, Lviv'],
   'alt.s3': ['Вітальня двокімнатної квартири в оренду в Галицькому районі Львова', 'Гостиная двухкомнатной квартиры в аренду в Галицком районе Львова', 'The living room of a two-room flat for rent in Halytskyi district, Lviv'],
   'alt.n': ['Вид на Київський район Харкова з вікна новобудови', 'Вид на Киевский район Харькова из окна новостройки', 'Kharkiv’s Kyivskyi district seen from a new-build window'],
-  'alt.st1': ['Вулиця Сумська в Харкові взимку', 'Улица Сумская в Харькове зимой', 'Sumska Street, Kharkiv, in winter'],
-  'alt.st2': ['Світла вітальня квартири з дизайнерським ремонтом у Львові', 'Светлая гостиная квартиры с дизайнерским ремонтом во Львове', 'A bright, designer-renovated living room in Lviv'],
+  'alt.st1': ['Чат з менеджером Avezor у телефоні: запит на квартиру, уточнення бюджету та району, заявку прийнято', 'Чат с менеджером Avezor в телефоне: запрос на квартиру, уточнение бюджета и района, заявка принята', 'A chat with an Avezor manager on a phone: an apartment request, budget and district clarified, request received'],
+  'st1.online': ['онлайн', 'онлайн', 'online'],
+  'st1.u1': ['Шукаю 2-кімнатну', 'Ищу 2-комнатную', 'Looking for a 2-bed'],
+  'st1.u2': ['у Києві', 'в Киеве', 'in Kyiv'],
+  'st1.m1': ['Підберемо! Який бюджет', 'Подберём! Какой бюджет', 'Sure! What budget'],
+  'st1.m2': ['і район?', 'и район?', 'and district?'],
+  'st1.c1': ['2 кімнати', '2 комнаты', '2 bedrooms'],
+  'st1.c2': ['до 90 000 $', 'до 90 000 $', 'up to $90,000'],
+  'st1.c3': ['Поділ', 'Подол', 'Podil'],
+  'st1.ok': ['Заявку прийнято', 'Заявка принята', 'Request received'],
+  'st1.ok2': ['Ми вам зателефонуємо', 'Мы вам перезвоним', 'We will call you back'],
+  'st1.input': ['Повідомлення', 'Сообщение', 'Message'],
+  'st2.a': ['2 кімн. · 52 м²', '2 комн. · 52 м²', '2 bed · 52 m²'],
+  'st2.b': ['2 кімн. · 67 м²', '2 комн. · 67 м²', '2 bed · 67 m²'],
+  'st2.c': ['2 кімн. · 58 м²', '2 комн. · 58 м²', '2 bed · 58 m²'],
+  'st2.cal': ['Перегляди', 'Просмотры', 'Viewings'],
+  'st2.tag': ['2 перегляди', '2 просмотра', '2 viewings'],
+  'st3.scale': ['Масштаб 1:100', 'Масштаб 1:100', 'Scale 1:100'],
+  'st3.doc': ['Технічний паспорт', 'Технический паспорт', 'Technical passport'],
+  'st3.ok': ['Площа збігається', 'Площадь совпадает', 'Area matches'],
+  'alt.st2': ['Добірка з трьох квартир і календар із двома призначеними переглядами', 'Подборка из трёх квартир и календарь с двумя назначенными просмотрами', 'A shortlist of three apartments and a calendar with two viewings booked'],
   'alt.st3': ['План квартири з технічного паспорта, одна кімната виділена для звірки', 'План квартиры из технического паспорта, одна комната выделена для сверки', 'A floor plan from a technical passport with one room marked for checking'],
-  'alt.st4': ['Вітальня з панорамним вікном у новобудові в Харкові', 'Гостиная с панорамным окном в новостройке в Харькове', 'A living room with a full-height window in a Kharkiv new build'],
+  'alt.st4': ['Договір купівлі-продажу з підписами сторін, печаткою про реєстрацію права власності та ключами', 'Договор купли-продажи с подписями сторон, печатью о регистрации права собственности и ключами', 'A sale contract signed by both parties, stamped as ownership registered, with the keys'],
+  'st4.doc': ['ДОГОВІР', 'ДОГОВОР', 'CONTRACT'],
+  'st4.doc2': ['купівлі-продажу квартири', 'купли-продажи квартиры', 'of sale: apartment'],
+  'st4.seller': ['Продавець', 'Продавец', 'Seller'],
+  'st4.buyer': ['Покупець', 'Покупатель', 'Buyer'],
+  'st4.stamp': ['ПРАВО ВЛАСНОСТІ ЗАРЕЄСТРОВАНО', 'ПРАВО СОБСТВЕННОСТИ ЗАРЕГИСТРИРОВАНО', 'OWNERSHIP REGISTERED · VERIFIED'],
   'alt.c': ['Простора вітальня-їдальня трикімнатної квартири у Львові', 'Просторная гостиная-столовая трёхкомнатной квартиры во Львове', 'A spacious living-dining room in a three-room flat, Lviv'],
   'alt.f': ['Будинки Андріївського узвозу в Києві влітку', 'Дома Андреевского спуска в Киеве летом', 'Houses on Andriivskyi Descent, Kyiv, in summer']
 };
@@ -996,6 +1265,52 @@ const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
 document.querySelectorAll('.langs button').forEach(b => b.addEventListener('click', () => apply(b.dataset.lang)));
+
+/* Step scenes play once on first sight, then again on hover (tap on phones). A replay never
+   cuts into one already running: the key's animation is the last to end. */
+if (!still) document.querySelectorAll('[data-scene]').forEach(svg => {
+  let busy = false;
+  const play = () => {
+    if (busy) return;
+    busy = true;
+    svg.classList.remove('is-play');
+    void svg.getBoundingClientRect();
+    svg.classList.add('is-play');
+  };
+  svg.addEventListener('animationend', e => { if (e.target.classList.contains('sc-last')) busy = false; });
+  const seen = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { seen.disconnect(); play(); } }), { threshold: 0.6 });
+  seen.observe(svg);
+  svg.closest('.how__step').addEventListener('mouseenter', play);
+  svg.addEventListener('click', play);
+});
+
+/* FAQ: <details> snaps open natively, so the height is tweened by hand. Closing has to keep
+   [open] until the tween ends, otherwise the answer vanishes before the item shrinks. */
+if (!still) document.querySelectorAll('.faq__list details').forEach(d => {
+  const sum = d.querySelector('summary'), ans = d.querySelector('p');
+  let anim = null;
+  const run = (from, to, done) => {
+    anim?.cancel();
+    d.classList.add('is-anim');
+    anim = d.animate({ height: [from + 'px', to + 'px'] }, { duration: 380, easing: 'cubic-bezier(.22,1,.36,1)' });
+    anim.onfinish = () => { anim = null; d.classList.remove('is-anim'); done?.(); };
+  };
+  sum.addEventListener('click', e => {
+    e.preventDefault();
+    const from = d.offsetHeight;
+    if (d.open && !d.classList.contains('is-closing')) {
+      d.classList.add('is-closing');
+      ans.animate({ opacity: [1, 0] }, { duration: 200, fill: 'forwards' });
+      run(from, sum.offsetHeight + parseFloat(getComputedStyle(d).paddingTop) * 2, () => { d.open = false; d.classList.remove('is-closing'); ans.getAnimations().forEach(a => a.cancel()); });
+    } else {
+      d.classList.remove('is-closing');
+      d.open = true;
+      ans.getAnimations().forEach(a => a.cancel());
+      ans.animate({ opacity: [0, 1], transform: ['translateY(-6px)', 'none'] }, { duration: 360, delay: 60, easing: 'ease-out', fill: 'backwards' });
+      run(from, d.offsetHeight);
+    }
+  });
+});
 
 /* Phone header: see-through over the hero, white once the hero has scrolled past it. */
 const mbar = $('[data-mbar]');
